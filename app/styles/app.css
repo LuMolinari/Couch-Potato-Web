@@ -9,9 +9,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  overflow: hidden;
- }
+
 body,
 h1,
 h2,
@@ -33,8 +31,11 @@ body {
   height: 100%;
   margin: 0;
   background-repeat: no-repeat;
-  overflow: hidden;
   color: #fefefe;
+  overflow-y: scroll;
+  background-size:cover;
+  background-attachment:fixed;  
+  margin-bottom: 200px; 
 }
 
 h1 {
@@ -58,6 +59,7 @@ h1 {
   width: 100%;
   height: 100px;
   padding: 25px 25px;
+  position: relative;
 }
 
 .nav-bar h1 {
@@ -160,13 +162,11 @@ h1 {
 /* grid for holding movies */
 .movie-container{
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto ;
   grid-gap: 50px 50px;
   padding: 20px 75px;
   height: 100vh;
   width: 100vw; 
-  overflow-y: scroll;
-
 }
 
 /* styling for movie poster discover tile. */
@@ -185,3 +185,16 @@ h1 {
   height: 250px;
 
 }
+
+.overlay { 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  transform: translate(1%, -110%);
+  text-align: center;
+}
+

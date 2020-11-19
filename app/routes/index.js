@@ -2,24 +2,13 @@ import Route from '@ember/routing/route';
 import fetch from 'fetch'
 export default class IndexRoute extends Route {
     async model() {
+        //set up api
         const response = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=4517228c3cc695f9dfa1dcb4c4979152&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1');
         const data = await response.json();
-        const imageUrl = 'http://image.tmdb.org/t/p/w185';
 
-        for(var i =0; i<data.results.length ;i++){
-
-            console.log( data.results[i].id);
-            console.log(data.results[i].title);
-            console.log( imageUrl + data.results[i].poster_path);
-            console.log(data.results[i].backdrop_path);
-            console.log(data.results[i].vote_average);
-            console.log(data.results[i].overview);
-            console.log(data.results[i].release_date);
-        }
-
+        //return results portion of json
         return data.results;
     }
-
 
 
 

@@ -1,12 +1,10 @@
 import Component from '@glimmer/component';
 import ENV from 'couch-potato-web/config/environment';
-
-const TMDB_API = 'https://api.themoviedb.org/3/';
-let configData=null;
-let letBaseImgUrl=null;
+import { action } from '@ember/object'
 
 export default class DiscoverTileComponent extends Component {
-  
+
+
 }
 
 
