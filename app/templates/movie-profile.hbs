@@ -1,0 +1,13 @@
+<h1>{{@model.title}}</h1>
+<img src='http://image.tmdb.org/t/p/w300{{@model.poster_path}}' alt='{{@model.title}} Poster'>
+<img src='http://image.tmdb.org/t/p/w300{{@model.backdrop_path}}' alt='{{@model.title}} Backdrop'>
+
+<div>Review Score {{@model.vote_average}}/10</div>
+<div>Tagline: {{@model.tagline}}</div>
+<div>OverView: {{@model.overview}}</div>
+<div>Release Date:  {{@model.release_date}}</div>
+
+{{#each @model.genres as |item|}}
+    {{item.name}}
+{{/each}}
+{{outlet}}

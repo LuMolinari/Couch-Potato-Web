@@ -2,6 +2,11 @@
 
 <h1> Discover</h1>
 <div class="movie-container">
-   <DiscoverTile/>
+   {{#each @model as |movie|}}
+      <LinkTo @route="movie-profile" @model={{movie.id}}>
+         <DiscoverTile @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}}/>
+      </LinkTo>
+   {{/each}}
 </div> 
+<div></div>
 {{outlet  }}

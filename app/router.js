@@ -12,4 +12,5 @@ Router.map(function() {
   this.route('bookmarks');
   this.route('my-settings');
   this.route('my-account');
+  this.route('movie-profile', { path: ':title' });
 });
