@@ -1,7 +1,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  .sign-up{
-   display: flex;
+
+
+  .sign-up {
+    display: flex;
     flex-direction: column;
     text-align: center;
     width: 350px;
@@ -17,25 +19,17 @@
     text-align: center;
   }
   /*Controls full container of submission boxes*/
-  .container{
-    display:flex ;
+  .container {
+    display: flex;
     flex-direction: column;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     height: 50%;
   }
-  .clearfix{
-    display:flex ;
+
+  .clearfix {
+    display: flex;
     flex-direction: row;
     justify-content: center;
-  }
-  /*contols register button*/
-  .signupbtn {
-    font-family: "Lobster Two", cursive;
-    padding: 10px;
-    background-color: #00FA9A;
-    border-radius: 30%;
-    font-size: 1.9em;
-    margin-top: 15px;
   }
   /* css for the input fields */
   input[type=text], input[type=password], input[type=email] {
@@ -44,56 +38,62 @@
     border: none;
     background: linear-gradient(#36535c, #0d1c16);
   }
-  a{
+
+  a {
     color: #fefefe;
   }
-  .input{
+
+  .input {
     margin-bottom: 15px;
     margin-top: 10px;
   }
-  .sign-button{
-    margin-top: 20px;
-     display:flex;
-    align-items:center;
-    justify-content:center;
+
+  .sign-button {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 15px;
   }
-  .button{
+
+  .button {
     width: 33%;
   }
 </style>
-
-<div class="sign-up">
+<main class="sign-up-frame">
   <h1>Sign Up</h1>
-  <div class="caption">
-    <img height="150px" src="/assets/images/spuds.png" alt="Couch Potato" />
+  <div class="sign-up">
 
-    <h1 class="picture-label">Couch Potato</h1>
-  </div>
-    
+    <div class="caption">
+      <img height="150px" src="/assets/images/spuds.png" alt="Couch Potato" />
 
-  <div class="ui input">
-    <input value="" type="text" placeholder="First Name...">
-  </div>
-  <div class="ui input">
-    <input type="text" placeholder="Last Name...">
-  </div>
-  <div class="ui input">
-    <input type="email" placeholder="Email...">
-  </div>
-  <div class="ui input">
-    <input type="password" placeholder="Password...">
-  </div>
+      <h1 class="picture-label">Couch Potato</h1>
+    </div>
 
-    
-  <div class="sign-button">
-      <button {{on 'click' this.signUp }} type="submit" class="ui teal button"><b>Register</b></button>
+
+    <div class="ui input">
+      <input value="" type="text" placeholder="First Name...">
+    </div>
+    <div class="ui input">
+      <input type="text" placeholder="Last Name...">
+    </div>
+    <div class="ui input">
+      <input type="email" placeholder="Email...">
+    </div>
+    <div class="ui input">
+      <input type="password" placeholder="Password...">
+    </div>
+
+
+    <div class="sign-button">
+      <button {{on 'click' this.signUp }} type="submit" class="ui teal button" id="sign-in-button" onclick="location.href='http://localhost:4200/sign-in';"><b>Register</b></button>
+    </div>
+    <div class="link">
+      <LinkTo @route="sign-in"><p><u>Already have an account? Log in here.</u></p></LinkTo>
+
+    </div>
   </div>
-  <div class="link">
+</main>
 
-    <LinkTo @route="sign-in"><p><u>Already have an account? Log in here.</u></p></LinkTo>
 
-  </div>
-
-  {{outlet}}
-</div>
+{{outlet}}

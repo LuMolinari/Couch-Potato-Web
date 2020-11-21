@@ -1,0 +1,418 @@
+<style>
+    .MyAccount {
+        box-sizing: border-box;
+    }
+
+    .buttons {
+        padding-top: 1.5px;
+        height: 10px;
+        width: 100%;
+    }
+
+
+    .FavoritesButton {
+        text-align: center;
+        float: left;
+        left: 38em;
+        display: inline-block;
+        position: absolute;
+    }
+
+    .SettingsButton {
+        float: right;
+        right: 35em;
+        display: inline-block;
+        position: absolute;
+    }
+
+    .ui.teal.button {
+        width: 20em;
+
+    }
+
+
+
+    #InfoBox {
+        margin-top: 50px;
+        margin-left: 15px;
+        max-height: 2000px;
+        height: 500px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    #SettingsDIV {
+        margin-top: 30px;
+        margin-left: 400px;
+        margin-right: 400px;
+    }
+
+    h2 {
+        text-align: left;
+        cursor: pointer;
+        transition: all .5s;
+        border-bottom: 1px solid white;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+
+
+    .settings-container {
+        width: 100%;
+        max-width: 850px;
+        margin: auto;
+        padding: 20px;
+        padding-top: 40px;
+
+    }
+
+    .settings-title {
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 20px;
+    }
+
+    .settings-section {
+        width: 100%;
+        padding-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .general-info {
+        position: relative;
+    }
+
+
+
+
+    .input-group {
+
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+
+    #firstNameBox {
+        display: none;
+    }
+
+    #lastNameBox {
+        display: none;
+    }
+
+    #emailBox {
+        display: none;
+    }
+
+    #userNameBox {
+        display: none;
+    }
+
+
+    p {
+        padding: 7px 15px;
+        margin-bottom: 0;
+        font-size: 1rem;
+        cursor: default;
+    }
+
+    .fas.fa-pen {
+        color: white;
+    }
+
+    .fas.fa-pen:hover {
+        color: teal;
+    }
+
+    i {
+        cursor: pointer;
+        transition: all .5s;
+        margin-right: 10px;
+    }
+
+    .non-active-form {
+        margin-bottom: 10px;
+        position: flex;
+        display: block;
+        margin-top: 20px;
+
+    }
+
+    .form-control {
+        position: flex;
+        display: block;
+        width: 18em;
+        height: 2em;
+    }
+</style>
+
+
+
+<div class="MyAccount">
+    <h1>My Account</h1>
+    <div class="buttons">
+        <div class="FavoritesButton">
+            <button onclick="favoritesFunction()" class="ui teal button">
+                <h3> <i class="fas fa-heart "></i> Favorites</h3>
+            </button>
+        </div>
+        <div class="SettingsButton">
+            <button onclick="settingsFunction()" class=" ui teal button">
+                <h3><i class="fas fa-cogs "></i> Account Settings</h3>
+            </button>
+        </div>
+    </div>
+    <div id="InfoBox">
+        <div id="FavoritesDIV">
+            <main class="FavBox">
+                <div class="ui four column grid">
+                    <div class="four wide column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                    <div class="column">
+                        <MovieBookmark />
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div id="SettingsDIV">
+            <h2 class="settings-title">General Information</h2>
+            <div class="general-info">
+                <div class="non-active-form">
+                    <p id="user-name" style="float:left">Jane1876 </p>
+                    <div class="ui input"> <input type="text" id="userNameBox" placeholder="Username" value="" /></div>
+                    <a onclick="changeUserName()"><i class="fas fa-pen" style="float:right"></i> </a>
+                    <br>
+                </div>
+                <div class="non-active-form">
+                    <p id="first-name" style="float:left">Jane </p>
+                    <div class="ui input"> <input type="text" id="firstNameBox" placeholder="First Name" value="" />
+                    </div>
+                    <a onclick="changeFirstName()"><i class="fas fa-pen" style="float:right"></i> </a>
+                    <br>
+                </div>
+
+
+                <div class="non-active-form">
+                    <p id="last-name" style="float:left">Doe </p>
+                    <div class="ui input"> <input type="text" id="lastNameBox" placeholder="Last Name" value="" /></div>
+                    <a onclick="changeLastName()"><i class="fas fa-pen" style="float:right"></i> </a>
+                    <br>
+                </div>
+                <div class="non-active-form">
+                    <p id="email-name" style="float:left">example@abc.com </p>
+                    <div class="ui input"> <input type="text" id="emailBox" placeholder="Email" value="" /></div>
+                    <a onclick="changeEmail()"><i class="fas fa-pen" style="float:right"></i> </a>
+                    <br>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2 class="settings-title">Password</h2>
+
+                <form class="form my-form">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input name="currentPassword" placeholder="Old Password" type="password"
+                                class="form-control" autocomplete="Old Password" value="">
+                            <span class="focus-input"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input name="password" placeholder="New Password" type="password" class="form-control"
+                                autocomplete="New Password" value="">
+                            <span class="focus-input"></span>
+                        </div>
+                    </div>
+                    <div class="form-submit right">
+                        <button class="ui teal button" type="submit" style="float:right">Change Password</button>
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+
+    var y = document.getElementById("FavoritesDIV");
+    var z = document.getElementById("SettingsDIV");
+    z.style.display = "none";
+    function settingsFunction() {
+        y.style.display = "none";
+        if (z.style.display === "none") {
+            z.style.display = "block";
+        } else {
+            z.style.display = "none";
+        }
+    }
+    function favoritesFunction() {
+        z.style.display = "none";
+        if (y.style.display === "none") {
+            y.style.display = "block";
+        } else {
+            y.style.display = "none";
+        }
+    }
+    function changeUserName() {
+        var userNameInput = document.getElementById("userNameBox");
+        var userNameText = document.getElementById("user-name");
+        var name1 = userNameInput.value;
+        if (userNameInput.style.display === "block") {
+
+            userNameText.innerHTML = name1;
+            userNameInput.style.display = "none";
+
+        } else {
+            userNameInput.style.display = "block";
+            userNameText.innerHTML = "";
+        }
+
+    }
+    function changeFirstName() {
+        var firstNameInput = document.getElementById("firstNameBox");
+        var firstNameText = document.getElementById("first-name");
+        var name1 = firstNameInput.value;
+        if (firstNameInput.style.display === "block") {
+
+            firstNameText.innerHTML = name1;
+            firstNameInput.style.display = "none";
+
+        } else {
+            firstNameInput.style.display = "block";
+            firstNameText.innerHTML = "";
+        }
+
+    }
+    function changeLastName() {
+        var lastNameInput = document.getElementById("lastNameBox");
+        var lastNameText = document.getElementById("last-name");
+        var name1 = lastNameInput.value;
+        if (lastNameInput.style.display === "block") {
+
+            lastNameText.innerHTML = name1;
+            lastNameInput.style.display = "none";
+
+        } else {
+            lastNameInput.style.display = "block";
+            lastNameText.innerHTML = "";
+        }
+
+    }
+    function changeEmail() {
+        var emailInput = document.getElementById("emailBox");
+        var emailText = document.getElementById("email-name");
+        var name1 = emailInput.value;
+        if (emailInput.style.display === "block") {
+
+            emailText.innerHTML = name1;
+            emailInput.style.display = "none";
+
+        } else {
+            emailInput.style.display = "block";
+            emailText.innerHTML = "";
+        }
+
+    }
+
+
+</script>
+{{outlet}}
