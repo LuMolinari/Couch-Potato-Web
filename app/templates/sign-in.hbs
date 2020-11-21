@@ -1,4 +1,3 @@
-
 <style>
   .signup-button p {
     line-height: 1.5;
@@ -60,6 +59,7 @@
     </div>
   </div>
       <div class="picture-label">Couch Potato</div>
+     
 <h2>Username</h2>
   <div class="ui input">
   <input type="text" placeholder="Username...">
@@ -69,10 +69,12 @@
   <input type="password" placeholder="Password...">
   </div>
   <div class="sign-button">
-    <button class="ui teal button" type="submit">Sign In</button>
+    <button class="ui teal button" type="submit" onclick="location.href='http://localhost:4200/my-account';">Sign In</button>
   </div>
   <div class=" signup-button">
     <LinkTo @route="sign-up"><p><u>Not registered yet? Sign up here</u></p></LinkTo>
+   
   </div>
 </div>
+
 {{outlet}}
