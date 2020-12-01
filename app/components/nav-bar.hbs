@@ -1,6 +1,11 @@
 <style>
-  #myDIV{
+  #myDIV {
     display: none;
+  }
+
+  .ui.icon.button {
+    height: 5.4ex;
+
   }
 </style>
 <div class="nav-bar">
@@ -18,9 +23,19 @@
       <LinkTo @route="sign-in">My Account</LinkTo>
     </div>
   </div>
+  <div>
 
-  <div class="big ui input inline-search">
-    <input type="text" placeholder="Search...">
+    <div class="ui action input" id="box">
+
+      <input type="text" id="myInput" placeholder="Search for movies...." title="Type in a movie" value="">
+      <LinkTo @route="search">
+        <button class="ui icon button" type="submit" id="myBtn" onclick="myFunction1()">
+          <i class="search icon"></i>
+        </button>
+      </LinkTo>
+
+    </div>
+
   </div>
   <script>
     function myFunction() {
@@ -31,6 +46,16 @@
         x.style.display = "none";
       }
     }
+
+    var input = document.getElementById("myInput");
+    input.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("myBtn").click();
+      }
+    });
+
+
   </script>
   {{yield}}
 </div>
