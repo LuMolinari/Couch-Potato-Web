@@ -1,3 +1,4 @@
+<h1>Search results for '{{this.searchTerm}}':</h1>
 <div class="movie-container">
 
   {{#each @model as |movie|}}
@@ -8,15 +9,16 @@
   {{/each}}
 
   <div class="page-button-holder">
-    <button {{on "click" this.pastPage}} class="ui left labeled icon button" type="submit">
+    <button {{on "click" this.pastPage}} class="ui teal left labeled icon button" type="submit">
       <i class="left arrow icon"></i>
       Previous
     </button>
     <p class="page-number"> {{this.page}} </p>
-    <button {{on "click" this.nextPage}} class="ui right labeled icon button" type="submit">
+    <button {{on "click" this.nextPage}} class="ui teal right labeled icon button" type="submit">
       <i class="right arrow icon"></i>
       Next
     </button>
+
   </div>
 
 </div>

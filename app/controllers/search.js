@@ -22,4 +22,6 @@ export default class SearchController extends Controller {
       this.page--;
     }
   }
+
+
 }
