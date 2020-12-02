@@ -1,71 +1,25 @@
-<style>
-  .moveList {
-    text-decoration: none;
+<div class="movie-container">
 
-    margin-left: 10ex;
+  {{#each @model as |movie|}}
+  <LinkTo @route="movie-profile" @model={{movie.id}}>
+    <DiscoverTile @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} />
+    <h2>{{movie.title}}</h2>
+  </LinkTo>
+  {{/each}}
 
-
-  }
-
-  #myUL li {
-    float: left;
-    margin-top: 7ex;
-    display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-gap: 50px 50px;
-    padding: 20px 75px;
-    width: 200px;
-    height: 400px;
-
-  }
-
-  a {
-    color: white;
-    font-size: 15px;
-  }
-
-  a:hover {
-    color: teal;
-  }
-</style>
-
-<div class="movieList">
-  <p class="tt"></p>
-  <ul id="myUL">
-
-    {{#each @model as |movie|}}
-
-    <LinkTo @route="movie-profile" @model={{movie.id}}>
-      <li><a href="#">
-          <DiscoverTile @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} />
-          <h2>{{movie.title}}</h2>
-        </a></li>
-    </LinkTo>
-    {{/each}}
-
-  </ul>
+  <div class="page-button-holder">
+    <button {{on "click" this.pastPage}} class="ui left labeled icon button" type="submit">
+      <i class="left arrow icon"></i>
+      Previous
+    </button>
+    <p class="page-number"> {{this.page}} </p>
+    <button {{on "click" this.nextPage}} class="ui right labeled icon button" type="submit">
+      <i class="right arrow icon"></i>
+      Next
+    </button>
+  </div>
 
 </div>
 
-<script>
-  function myFunction1() {
-    // var x = document.getElementById("box");
-    // var y= document.getElementById("box1");
-    //  x.style.display = "none";
-    // y.style.display ="block";
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
 
-    //  if (x.style.display === "none") {
-    //  x.style.display = "block";
-    //} else {
-
-    // }
-    //  var box = document.getElementsByClassName("ui action input");
-    // box.innerHTML="<h2> Sponge</h2>"
-    //input.value=filter;
-    // alert(filter);
-  }
-</script>
 {{outlet}}

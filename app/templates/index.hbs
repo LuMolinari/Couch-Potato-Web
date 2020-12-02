@@ -3,21 +3,21 @@
 <h1> Discover</h1>
 <div class="movie-container">
    {{#each @model as |movie|}}
-      <LinkTo @route="movie-profile" @model={{movie.id}}>
-         <DiscoverTile @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}}/>
-      </LinkTo>
+   <LinkTo @route="movie-profile" @model={{movie.id}}>
+      <DiscoverTile @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} />
+   </LinkTo>
    {{/each}}
    <div class="page-button-holder">
-    <button {{on "click" this.pastPage}}  class="ui left labeled icon button" type="submit">
-      <i class="left arrow icon"></i>
-      Previous
-   </button>
-   <p class="page-number"> {{this.page}} </p>
-   <button {{on "click" this.nextPage}} class="ui right labeled icon button" type="submit">
-      <i class="right arrow icon"></i>
-      Next
-   </button>
+      <button {{on "click" this.pastPage}} class="ui left labeled icon button" type="submit">
+         <i class="left arrow icon"></i>
+         Previous
+      </button>
+      <p class="page-number"> {{this.page}} </p>
+      <button {{on "click" this.nextPage}} class="ui right labeled icon button" type="submit">
+         <i class="right arrow icon"></i>
+         Next
+      </button>
    </div>
-</div> 
+</div>
 
 {{outlet  }}

@@ -5,7 +5,8 @@
     color: #fefefe;
     margin-top: 10%;
   }
-  .container{
+
+  .container {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -13,38 +14,46 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .ui input{
-    width: 25%; margin-bottom: 25px;
+
+  .ui input {
+    width: 25%;
+    margin-bottom: 25px;
   }
-  .frame{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+
+  .frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .img-holder{
+
+  .img-holder {
     width: 150px;
   }
-  .center{
+
+  .center {
     display: block;
     width: 100%;
     height: auto;
     margin: 0 auto;
   }
-  .button{
+
+  .button {
     width: 33%;
   }
-  .sign-button{
+
+  .sign-button {
     margin-top: 20px;
-     display:flex;
-    align-items:center;
-    justify-content:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
   .picture-label {
     font-family: "Lobster Two", cursive;
     font-size: 4em;
     line-height: normal;
     display: block;
-    
+
     text-align: center;
   }
 </style>
@@ -54,26 +63,29 @@
     Sign In
   </h1>
   <div class="frame">
-    <div >
+    <div>
       <img height="150px" src="/assets/images/spuds.png" alt="Couch Potato" />
     </div>
   </div>
-      <div class="picture-label">Couch Potato</div>
-     
-<h2>Username</h2>
+  <div class="picture-label">Couch Potato</div>
+
+  <h2>Username</h2>
   <div class="ui input">
-  <input type="text" placeholder="Username...">
+    <input type="text" placeholder="Username...">
   </div>
   <h2>Password</h2>
   <div class="ui input">
-  <input type="password" placeholder="Password...">
+    <input type="password" placeholder="Password...">
   </div>
   <div class="sign-button">
-    <button class="ui teal button" type="submit" onclick="location.href='http://localhost:4200/my-account';">Sign In</button>
+    <button class="ui teal button" type="submit" onclick="location.href='http://localhost:4200/my-account';">Sign
+      In</button>
   </div>
   <div class=" signup-button">
-    <LinkTo @route="sign-up"><p><u>Not registered yet? Sign up here</u></p></LinkTo>
-   
+    <LinkTo @route="sign-up">
+      <p><u>Not registered yet? Sign up here</u></p>
+    </LinkTo>
+
   </div>
 </div>
 

@@ -1,14 +1,14 @@
-import Service from '@ember/service';
-import { tracked } from '@glimmer/tracking';
+import Service from "@ember/service";
+import { tracked } from "@glimmer/tracking";
 
 export default class SearchingService extends Service {
-    @tracked search="";
+  @tracked search = "";
 
-    setTerm(term){
-        this.search = term;
-    }
+  setTerm(term) {
+    this.search = term;
+  }
 
-    getTerm(){
-        return this.term;
-    }
+  getTerm() {
+    return this.term;
+  }
 }

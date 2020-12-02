@@ -1,7 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
-
   .sign-up {
     display: flex;
     flex-direction: column;
@@ -10,6 +8,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   /*contols label under photo*/
   .picture-label {
     font-family: "Lobster Two", cursive;
@@ -18,6 +17,7 @@
     display: block;
     text-align: center;
   }
+
   /*Controls full container of submission boxes*/
   .container {
     display: flex;
@@ -31,8 +31,11 @@
     flex-direction: row;
     justify-content: center;
   }
+
   /* css for the input fields */
-  input[type=text], input[type=password], input[type=email] {
+  input[type=text],
+  input[type=password],
+  input[type=email] {
     padding: 15px;
     margin-top: 15px;
     border: none;
@@ -86,10 +89,13 @@
 
 
     <div class="sign-button">
-      <button {{on 'click' this.signUp }} type="submit" class="ui teal button" id="sign-in-button" onclick="location.href='http://localhost:4200/sign-in';"><b>Register</b></button>
+      <button {{on 'click' this.signUp }} type="submit" class="ui teal button" id="sign-in-button"
+        onclick="location.href='http://localhost:4200/sign-in';"><b>Register</b></button>
     </div>
     <div class="link">
-      <LinkTo @route="sign-in"><p><u>Already have an account? Log in here.</u></p></LinkTo>
+      <LinkTo @route="sign-in">
+        <p><u>Already have an account? Log in here.</u></p>
+      </LinkTo>
 
     </div>
   </div>

@@ -26,14 +26,11 @@
   <div>
 
     <div class="ui action input" id="box">
-<Input
-  @id="user-question"
-  @type="text"
-  @value={{this.searchQuery}}
-/>      {{!-- <Input type="text" id="myInput" placeholder="Search for movies...." title="Type in a movie" value={{this.searchQuery}}> --}}
-      
+      <Input @id="user-question" @type="text" @value={{this.searchQuery}} />
+      {{!-- <Input type="text" id="myInput" placeholder="Search for movies...." title="Type in a movie" value={{this.searchQuery}}> --}}
+
       <LinkTo @route="search" @query={{hash searchTerm=this.searchQuery}}>
-        <button class="ui icon button" type="submit" id="myBtn" {{on 'click' this.search}}>
+        <button class="ui icon button" type="submit" id="myBtn">
           <i class="search icon"></i>
         </button>
       </LinkTo>

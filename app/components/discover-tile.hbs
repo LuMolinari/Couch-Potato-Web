@@ -1,12 +1,12 @@
-
 <div class="discover-tile">
-  <img
-    alt="Movie Poster for {{@title}}"
-    ...attributes
-
-    src="http://image.tmdb.org/t/p/w185{{@poster}}"
-    width="75px" 
-    height="150px"
-  >
   {{yield}}
+{{!--This If statement checks if poster path exists before it tries to fetch photo
+otherwise it puts a stock picture --}}
+  {{#if @poster}}
+    <img alt="Movie Poster for {{@title}}" ...attributes src="http://image.tmdb.org/t/p/w185{{@poster}}" width="75px"
+    height="150px">
+  {{else}}
+    <img alt="Movie Poster for {{@title}}" ...attributes src="/assets/images/NoPoster.png" width="75px"
+    height="150px">
+  {{/if}}
 </div>
