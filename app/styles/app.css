@@ -167,6 +167,7 @@ h1 {
   padding: 20px 75px;
   height: 100vh;
   width: 100vw; 
+  margin-bottom: 50px;
 }
 
 /* styling for movie poster discover tile. */
@@ -196,5 +197,17 @@ h1 {
   color: white;
   transform: translate(1%, -110%);
   text-align: center;
+
 }
 
+.page-button-holder{
+  grid-column: 1 / span 5;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+
+}
+.page-number{
+  margin: 0 40px;
+  font-size: 2em;
+}
