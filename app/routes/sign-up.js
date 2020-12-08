@@ -34,6 +34,9 @@ export default Route.extend({
                     // An error happened.
                   });
                   
+
+                  
+                
                 // send user to route necessary
                 // change account setting to contain a logout button instead of a signin/signup
             })

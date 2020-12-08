@@ -7,14 +7,8 @@ export default class MovieModel extends Model {
   @attr() movieID;
   @attr() title;
   @attr() poster_path;
-  @attr() backdrop_path;
   @attr() vote_average;
-  @attr() overview;
   @attr() release_date;
-
-  // title: DS.attr('string'),
-  // img: DS.attr('string'),
-  // img2: DS.attr('string'),
-  // reviewScore: DS.attr('string'),
-  // description: DS.attr('string'),
+  @attr() isFavorited;
+  @attr() isBookmarked;
 }

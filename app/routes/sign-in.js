@@ -8,6 +8,7 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import firebase from 'firebase/app';
+import "firebase/database";
 
 export default Route.extend({
     session: service(),
@@ -26,16 +27,20 @@ export default Route.extend({
             const auth = await this.get('firebaseApp').auth();
             const {email, password} = this.get('controller').getProperties('email', 'password');
 
-            firebase.auth().createUserWithEmailAndPassword(email, password)
+            firebase.auth().signInWithEmailAndPassword(email, password)
             .then((user) => {
                 console.log("user is signed in");
                 // send user to route necessary
                 // change account setting to contain a logout button instead of a signin/signup
+                firebase.database().ref('users/' + user.user.uid).set({
+                    savedmovies,
+                  });
+
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                console.log("errors" + errorCode + errorMessage);
+                console.log("errors " + errorCode + ' '+ errorMessage);
             });
         }
     }

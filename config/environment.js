@@ -59,7 +59,9 @@ module.exports = function(environment) {
     // here you can enable a production-specific feature
   }
 
-    ENV.TMBD_ACCESS_TOKEN = '4517228c3cc695f9dfa1dcb4c4979152';
+  
+
+  ENV.TMBD_ACCESS_TOKEN = '4517228c3cc695f9dfa1dcb4c4979152';
 
   return ENV;
 };
