@@ -2,12 +2,18 @@
 <img src='http://image.tmdb.org/t/p/w300{{@model.poster_path}}' alt='{{@model.title}} Poster'>
 <img src='http://image.tmdb.org/t/p/w300{{@model.backdrop_path}}' alt='{{@model.title}} Backdrop'>
 
-<div>Review Score {{@model.vote_average}}/10</div>
+{{!-- check if tagline exists --}}
+{{#if @model.tagline}}
 <div>Tagline: {{@model.tagline}}</div>
+{{else}}
+{{!-- this is where the else statement goes --}}
+{{/if}}
+
+<div>Review Score {{@model.vote_average}}/10</div>
 <div>OverView: {{@model.overview}}</div>
-<div>Release Date:  {{@model.release_date}}</div>
+<div>Release Date: {{@model.release_date}}</div>
 
 {{#each @model.genres as |item|}}
-    {{item.name}}
+{{item.name}}
 {{/each}}
 {{outlet}}

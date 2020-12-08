@@ -94,10 +94,12 @@
     {{!-- action "sign-up" first last email password --}}
 
     <div class="sign-button">
+
       {{!-- <button {{on 'click' this.signUp }} type="submit" class="ui teal button" id="sign-in-button"
         onclick="location.href='http://localhost:4200/sign-in';"><b>Register</b></button> --}}
       <button {{action "signUp" first last email password }} type="submit" class="ui teal button"
         id="sign-in-button"><b>Register</b></button>
+
     </div>
     <div class="link">
       <LinkTo @route="sign-in">

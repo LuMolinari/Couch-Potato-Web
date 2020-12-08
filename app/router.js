@@ -13,4 +13,6 @@ Router.map(function() {
   this.route('my-settings');
   this.route('my-account');
   this.route('movie-profile', { path: ':title' });
+  this.route('searchPage');
+  this.route('search');
 });

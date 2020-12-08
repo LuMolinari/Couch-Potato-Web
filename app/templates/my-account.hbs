@@ -27,10 +27,7 @@
 
     .ui.teal.button {
         width: 20em;
-
     }
-
-
 
     #InfoBox {
         margin-top: 50px;
@@ -155,12 +152,12 @@
     <h1>My Account</h1>
     <div class="buttons">
         <div class="FavoritesButton">
-            <button onclick="favoritesFunction()" class="ui teal button">
+            <button onclick="favoritesFunction()" class="ui teal button" type="button">
                 <h3> <i class="fas fa-heart "></i> Favorites</h3>
             </button>
         </div>
         <div class="SettingsButton">
-            <button onclick="settingsFunction()" class=" ui teal button">
+            <button onclick="settingsFunction()" class=" ui teal button" type="button">
                 <h3><i class="fas fa-cogs "></i> Account Settings</h3>
             </button>
         </div>
@@ -272,30 +269,30 @@
             <h2 class="settings-title">General Information</h2>
             <div class="general-info">
                 <div class="non-active-form">
-                    <p id="user-name" style="float:left">Jane1876 </p>
+                    <p id="user-name">Jane1876 </p>
                     <div class="ui input"> <input type="text" id="userNameBox" placeholder="Username" value="" /></div>
-                    <a onclick="changeUserName()"><i class="fas fa-pen" style="float:right"></i> </a>
+                    {{!-- <a onclick="changeUserName()"><i class="fas fa-pen" style="float:right"></i> </a> --}}
                     <br>
                 </div>
                 <div class="non-active-form">
-                    <p id="first-name" style="float:left">Jane </p>
+                    <p id="first-name">Jane </p>
                     <div class="ui input"> <input type="text" id="firstNameBox" placeholder="First Name" value="" />
                     </div>
-                    <a onclick="changeFirstName()"><i class="fas fa-pen" style="float:right"></i> </a>
+                    {{!-- <a onclick="changeFirstName()"><i class="fas fa-pen" style="float:right"></i> </a> --}}
                     <br>
                 </div>
 
 
                 <div class="non-active-form">
-                    <p id="last-name" style="float:left">Doe </p>
+                    <p id="last-name">Doe </p>
                     <div class="ui input"> <input type="text" id="lastNameBox" placeholder="Last Name" value="" /></div>
-                    <a onclick="changeLastName()"><i class="fas fa-pen" style="float:right"></i> </a>
+                    {{!-- <a onclick="changeLastName()"><i class="fas fa-pen" style="float:right"></i> </a> --}}
                     <br>
                 </div>
                 <div class="non-active-form">
-                    <p id="email-name" style="float:left">example@abc.com </p>
+                    <p id="email-name">example@abc.com </p>
                     <div class="ui input"> <input type="text" id="emailBox" placeholder="Email" value="" /></div>
-                    <a onclick="changeEmail()"><i class="fas fa-pen" style="float:right"></i> </a>
+                    {{!-- <a onclick="changeEmail()"><i class="fas fa-pen" style="float:right"></i> </a> --}}
                     <br>
                 </div>
             </div>
@@ -319,7 +316,7 @@
                         </div>
                     </div>
                     <div class="form-submit right">
-                        <button class="ui teal button" type="submit" style="float:right">Change Password</button>
+                        <button class="ui teal button" type="submit">Change Password</button>
                     </div>
                 </form>
 

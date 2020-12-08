@@ -1,3 +1,10 @@
+
+// import Route from "@ember/routing/route";
+// import ember from "ember";
+
+// export default class SignInRoute extends Route {
+    
+// }
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import firebase from 'firebase/app';
@@ -33,3 +40,4 @@ export default Route.extend({
         }
     }
 });
+
