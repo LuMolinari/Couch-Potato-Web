@@ -1,19 +1,156 @@
-<h1>{{@model.title}}</h1>
-<img src='http://image.tmdb.org/t/p/w300{{@model.poster_path}}' alt='{{@model.title}} Poster'>
-<img src='http://image.tmdb.org/t/p/w300{{@model.backdrop_path}}' alt='{{@model.title}} Backdrop'>
 
-{{!-- check if tagline exists --}}
-{{#if @model.tagline}}
-<div>Tagline: {{@model.tagline}}</div>
-{{else}}
-{{!-- this is where the else statement goes --}}
-{{/if}}
+<style>
+    html,
+    body {
+        height: 100%;
+    }
 
-<div>Review Score {{@model.vote_average}}/10</div>
-<div>OverView: {{@model.overview}}</div>
-<div>Release Date: {{@model.release_date}}</div>
+    .grid-container {
+        display: grid;
+        grid-template-columns: 90ex 1fr;
+        grid-gap: 10px;
 
-{{#each @model.genres as |item|}}
-{{item.name}}
-{{/each}}
+        background:linear-gradient(to left, rgba(18, 18, 19, .8), rgba(52, 73, 94, .6)),
+        url('http://image.tmdb.org/t/p/w1280{{@model.backdrop_path}}');
+        /* Full height */
+        top: 0;
+        left: 0;
+        height: 100%;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+
+
+        /* bottom, image  .grid-container::before {
+   linear-gradient(to right,rgba(red,0,0,.2),rgba(violet,0,0,1),
+} */
+
+    }
+
+
+    .j {
+        float: right;
+        margin-left: 3ex;
+        margin-right: 20ex;
+        margin-bottom: 60%;
+
+    }
+
+    .poster {
+        float: right;
+        margin-top: 14ex;
+        margin-left: 10ex;
+        margin-right: 5ex;
+
+
+    }
+
+    .posterName {
+        margin-top: 20ex;
+        margin-left: 0ex;
+        float: left;
+        display: grid;
+        grid-template-columns: 1fr 100px;
+        justify-content: left;
+        grid-gap: 60px;
+
+
+
+    }
+
+    .genre {
+        float: left;
+        display: inline;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .g {
+        float: left;
+        margin-right: 2ex;
+
+    }
+
+    .info {
+        float: left;
+        width: 100%;
+    }
+
+    .title {
+        float: left;
+        margin-left: 0ex;
+        text-align: left;
+    }
+
+    .buttons {
+        margin-top: 3ex;
+        margin-right: 0ex;
+    }
+</style>
+
+<div class="grid-container">
+
+    <div class="h">
+
+        {{#if @model.poster_path}}
+        <img class="poster" src='http://image.tmdb.org/t/p/w300{{@model.poster_path}}' alt='{{@model.title}} Poster'>
+        {{else}}
+        <img class="poster" src='/assets/images/NoPoster.png' alt='{{@model.title}} Poster'>
+        {{/if}}
+    </div>
+    <div class="j">
+        <div class="posterName">
+            <div class="title">
+                <h1 class="name">{{@model.title}}</h1>
+            </div>
+            <div class='btn-toolbar pull-right'>
+                <div class="buttons">
+                    <button class=" mini ui inverted white basic button" style="float: right; " onclick="function1()">
+                        <i class="fas fa-heart"></i> </button>
+                    <button class="mini ui inverted white basic button" style="float:right;  " onclick="function1()">
+                        <i class="fas fa-bookmark"></i> </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="genre">
+            {{#each @model.genres as |item|}}
+            <div class="g">
+                <h2 class="name"> <i class="fas fa-circle"></i> {{item.name}} </h2>
+            </div>
+            {{/each}}
+
+        </div>
+        <div class="info">
+            <div class="ReleaseDate">
+                <h3 class="name">Release Date: {{@model.release_date}}</h3>
+
+            </div>
+            <div class="Rating">
+                <h3 class="name">Average Rating: {{@model.vote_average}}/10</h3>
+
+            </div>
+            <div class="Tagline">
+                {{#if @model.tagline}}
+                <h3 class="name">Tagline: {{@model.tagline}}</h3>
+
+                {{/if}}
+            </div>
+            <div class="Overview">
+                <h3 class="name">Description: {{@model.overview}}</h3>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+    function1(){
+
+
+
+    }
+</script>
 {{outlet}}
