@@ -71,14 +71,18 @@
 
   <h2>Username</h2>
   <div class="ui input">
-    <input type="text" placeholder="Username...">
+
+    {{input type="text" value=email placeholder="Username"}}
+    {{!-- <input type="text" placeholder="Username..."> --}}
   </div>
   <h2>Password</h2>
   <div class="ui input">
-    <input type="password" placeholder="Password...">
+    {{input type="password" value=password placeholder="Password"}}
+    {{!-- <input type="password" placeholder="Password..." > --}}
   </div>
   <div class="sign-button">
-    <button class="ui teal button" type="submit" onclick="location.href='http://localhost:4200/my-account';">Sign
+    <button class="ui teal button" type="submit" {{action "login" email password}}>Sign
+
       In</button>
   </div>
   <div class=" signup-button">

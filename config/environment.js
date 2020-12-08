@@ -2,6 +2,16 @@
 
 module.exports = function(environment) {
   let ENV = {
+    firebase: {
+      apiKey: "AIzaSyB2CVRnv_C2Ek8qwYLPAjahfBo6H2MhA9I",
+      authDomain: "couchpotatoweb-29176.firebaseapp.com",
+      databaseURL: "https://couchpotatoweb-29176.firebaseio.com",
+      projectId: "couchpotatoweb-29176",
+      storageBucket: "couchpotatoweb-29176.appspot.com",
+      messagingSenderId: "1034655500544",
+      appId: "1:1034655500544:web:a7067bfd390c21b3e54be5",
+      measurementId: "G-YW8VFTJ576"
+    },
     modulePrefix: 'couch-potato-web',
     environment,
     rootURL: '/',
