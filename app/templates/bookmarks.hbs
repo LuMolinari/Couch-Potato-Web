@@ -3,102 +3,15 @@
 </header>
 <main class="bookmark-frame">
     <div class="ui four column grid">
-        <div class="four wide column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
-        <div class="column">
-            <MovieBookmark />
-        </div>
+         {{#each @model as |movie|}}
+        <LinkTo @route="movie-profile" @model={{movie.id}}>
+          <div class="column">
+            <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} />
+            </div>
+        </LinkTo>
+    {{/each}}
+    
+       
     </div>
 </main>
 

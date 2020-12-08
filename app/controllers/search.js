@@ -2,19 +2,19 @@ import Controller from "@ember/controller";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 
-export default class IndexController extends Controller {
-  //create query paramaters
-  queryParams = ["page", "size"];
+export default class SearchController extends Controller {
+  queryParams = ["searchTerm", "page", "pageCount"];
+
+  searchTerm = "";
 
   //track values
   @tracked page = 1;
-  size = 1000;
+  @tracked pageCount = 5;
 
   @action nextPage() {
-    if (this.page < this.size) {
+    if (this.page < this.pageCount) {
       this.page++;
     }
-    return this.set("page-number", this.page.toString);
   }
 
   @action pastPage() {
@@ -22,4 +22,6 @@ export default class IndexController extends Controller {
       this.page--;
     }
   }
+
+
 }

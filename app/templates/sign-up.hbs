@@ -1,7 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-
-
   .sign-up {
     display: flex;
     flex-direction: column;
@@ -10,6 +8,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   /*contols label under photo*/
   .picture-label {
     font-family: "Lobster Two", cursive;
@@ -18,6 +17,7 @@
     display: block;
     text-align: center;
   }
+
   /*Controls full container of submission boxes*/
   .container {
     display: flex;
@@ -31,8 +31,11 @@
     flex-direction: row;
     justify-content: center;
   }
+
   /* css for the input fields */
-  input[type=text], input[type=password], input[type=email] {
+  input[type=text],
+  input[type=password],
+  input[type=email] {
     padding: 15px;
     margin-top: 15px;
     border: none;
@@ -71,25 +74,37 @@
     </div>
 
 
+    {{!-- change the inpute here to handlebar syntax --}}
     <div class="ui input">
-      <input value="" type="text" placeholder="First Name...">
+      {{!-- <input value="" type="text" placeholder="First Name..."> --}}
+      {{input type="text" value=first placeholder="First Name"}}
     </div>
     <div class="ui input">
-      <input type="text" placeholder="Last Name...">
+      {{!-- <input type="text" placeholder="Last Name..."> --}}
+      {{input type="text" value=last placeholder="Last Name"}}
     </div>
     <div class="ui input">
-      <input type="email" placeholder="Email...">
+      {{!-- <input type="email" placeholder="Email..."> --}}
+      {{input type="text" value=email placeholder="Username"}}
     </div>
     <div class="ui input">
-      <input type="password" placeholder="Password...">
+      {{!-- <input type="password" placeholder="Password..."> --}}
+      {{input type="text" value=password placeholder="Password"}}
     </div>
-
+    {{!-- action "sign-up" first last email password --}}
 
     <div class="sign-button">
-      <button {{on 'click' this.signUp }} type="submit" class="ui teal button" id="sign-in-button" onclick="location.href='http://localhost:4200/sign-in';"><b>Register</b></button>
+
+      {{!-- <button {{on 'click' this.signUp }} type="submit" class="ui teal button" id="sign-in-button"
+        onclick="location.href='http://localhost:4200/sign-in';"><b>Register</b></button> --}}
+      <button {{action "signUp" first last email password }} type="submit" class="ui teal button"
+        id="sign-in-button"><b>Register</b></button>
+
     </div>
     <div class="link">
-      <LinkTo @route="sign-in"><p><u>Already have an account? Log in here.</u></p></LinkTo>
+      <LinkTo @route="sign-in">
+        <p><u>Already have an account? Log in here.</u></p>
+      </LinkTo>
 
     </div>
   </div>

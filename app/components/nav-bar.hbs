@@ -1,6 +1,11 @@
 <style>
-  #myDIV{
+  #myDIV {
     display: none;
+  }
+
+  .ui.icon.button {
+    height: 5.4ex;
+
   }
 </style>
 <div class="nav-bar">
@@ -18,9 +23,19 @@
       <LinkTo @route="sign-in">My Account</LinkTo>
     </div>
   </div>
+  <div>
 
-  <div class="big ui input inline-search">
-    <input type="text" placeholder="Search...">
+    <div class="ui action input" id="box">
+      <Input @id="user-question" @type="text" @value={{this.searchQuery}} />
+      {{!-- <Input type="text" id="myInput" placeholder="Search for movies...." title="Type in a movie" value={{this.searchQuery}}> --}}
+
+      <LinkTo @route="search" @query={{hash searchTerm=this.searchQuery}}>
+        <button class="ui icon button" type="submit" id="myBtn">
+          <i class="search icon"></i>
+        </button>
+      </LinkTo>
+
+    </div>
   </div>
   <script>
     function myFunction() {
@@ -31,6 +46,8 @@
         x.style.display = "none";
       }
     }
+
+
   </script>
   {{yield}}
 </div>
