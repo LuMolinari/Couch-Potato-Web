@@ -45,10 +45,7 @@ export default class MovieProfileRoute extends Route {
             console.log("Movie Not in Database");
           }
         });
-    } else {
-      controller.set("model.favorite", false);
-      controller.set("model.bookmark", false);
-    }
+    } 
 
     controller.set("model", model);
   }
