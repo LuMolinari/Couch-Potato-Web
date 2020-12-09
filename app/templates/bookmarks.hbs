@@ -2,17 +2,26 @@
     <h1>BookMarks</h1>
 </header>
 <main class="bookmark-frame">
+
     <div class="ui four column grid">
-         {{#each @model as |movie|}}
-        <LinkTo @route="movie-profile" @model={{movie.id}}>
-          <div class="column">
-            <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} />
-            </div>
-        </LinkTo>
-    {{/each}}
     
-       
+        {{#each @model as |movie|}}
+            console.log(movie.title);
+   <h1>{{movie.title}}</h1>
+   console.log(movie.title);
+        {{!-- <LinkTo @route="movie-profile" @model={{movie.movieID}}> --}}
+            {{!-- <div class="column"> --}}
+                {{!-- <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} /> --}}
+            {{!-- </div> --}}
+        {{!-- </LinkTo> --}}
+        {{/each}}
+
+
     </div>
 </main>
+
+{{!-- {{#if @model.isBookmarked}} --}}
+{{!-- <h1>{{@model.title}}</h1> --}}
+{{!-- {{/if}} --}}
 
 {{outlet}}

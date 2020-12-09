@@ -123,10 +123,9 @@ h1 {
 .bookmark-frame {
   padding: 0 1.2em;
   background-color: transparent;
-  position: fixed;
   top: 175px;
   bottom: 0;
-  overflow-y: scroll;
+ 
 }
 
 .bookmark-container {
