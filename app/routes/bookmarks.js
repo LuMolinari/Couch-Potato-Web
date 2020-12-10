@@ -31,8 +31,9 @@ export default class BookmarksRoute extends Route {
               });
               var myJsonString = JSON.stringify(returnArr);
 
-              console.log("test", myJsonString);
-              return myJsonString;
+              console.log("test", returnArr);
+              console.log("Bookmark", returnArr[0].isBookmarked);
+              return returnArr;
           
             
           }
