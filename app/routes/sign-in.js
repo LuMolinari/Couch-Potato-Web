@@ -11,8 +11,10 @@ import firebase from 'firebase/app';
 import "firebase/database";
 
 export default Route.extend({
+    notify: service(),
     session: service(),
     firebaseApp: service(),
+    
     actions: {
         logout() {
             logout
@@ -32,15 +34,14 @@ export default Route.extend({
                 console.log("user is signed in");
                 // send user to route necessary
                 // change account setting to contain a logout button instead of a signin/signup
-                firebase.database().ref('users/' + user.user.uid).set({
-                    savedmovies,
-                  });
-
+                this.notify.success("Sign In Successful");
+                this.transitionTo('index');
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
                 console.log("errors " + errorCode + ' '+ errorMessage);
+                this.notify.error(errorMessage);
             });
         }
     }

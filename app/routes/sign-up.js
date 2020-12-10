@@ -8,6 +8,7 @@ import { inject as service } from '@ember/service';
 import firebase from 'firebase/app';
 
 export default Route.extend({
+    notify: service(),
     session: service(),
     firebaseApp: service(),
     actions: {
@@ -35,15 +36,17 @@ export default Route.extend({
                   });
                   
 
-                  
-                
+                //create alert
+                this.notify.success("Account Created")
                 // send user to route necessary
+                this.transitionTo('index')
                 // change account setting to contain a logout button instead of a signin/signup
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                console.log("errors" + errorCode + errorMessage);
+                console.log("errors :" + errorCode +" "+ errorMessage);
+                this.notify.error(errorMessage);
             });
         }
     }

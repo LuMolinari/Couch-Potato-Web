@@ -17,6 +17,7 @@ export default class IndexRoute extends Route {
     const data = await response.json();
 
     //return results portion of json
+    console.log(data.results);
     return data.results;
   }
 }
