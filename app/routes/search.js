@@ -26,7 +26,7 @@ export default class SearchRoute extends Route {
         "&include_adult=false"
     );
     const data = await response.json();
-
+  console.log(data);
     //return results portion of json
     return data.results;
   }
