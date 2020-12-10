@@ -6,11 +6,21 @@ import firebase from "firebase/app";
 import "firebase/database";
 
 export default class MovieProfileController extends Controller {
- 
+ // Notify works on this page for testing purposes
+  @service() notify;
+ //this.notify. info, success, warning, alert and error
   @tracked checkBookmark = false;
   @tracked checkfavorite = false;
   //the model data passesd is available in the controller using this.model
   //check the route to see how it's passed
+
+
+  get favorite() {
+    return this.checkfavorite;
+  }
+  get bookmark(){
+    return this.checkBookmark;
+  }
 
   @action
   saveFavorite() {
@@ -40,6 +50,8 @@ export default class MovieProfileController extends Controller {
                 .database()
                 .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
                 .remove();
+                this.notify.success(this.model.title + " was removed from favorites.")
+
             } else {
               //if movie was saved then update isfavorite to be the opposite of what it is
               firebase
@@ -48,7 +60,9 @@ export default class MovieProfileController extends Controller {
                 .update({
                   isFavorited: !userData.isFavorited,
                 });
-                this.checkfavorite = !userData.isFavorited;
+
+                this.notify.success(this.model.title + " was added to favorites.")
+
             }
           } else {
             //otherwise create movie data in database
@@ -64,14 +78,20 @@ export default class MovieProfileController extends Controller {
                 isFavorited: true,
                 isBookmarked: false,
               });
+
+              this.notify.success(this.model.title + " was added to favorites.")
           }
 
-          window.location.reload(true);
         });
+
+        this.checkfavorite = !this.checkfavorite;
 
       
     } else {
-      console.log("User Not Signed in");
+      // Notify works on this page for testing purposes
+
+      this.notify.error("You must make an account to save favorites.")
+      //info, success, warning, alert and error
       //TODO provide alert asking user to sign up
       // No user is signed in.
     }
@@ -103,6 +123,8 @@ export default class MovieProfileController extends Controller {
                 .database()
                 .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
                 .remove();
+                this.notify.success(this.model.title + " was removed from bookmarks.")
+
             } else {
               //if movie was saved then update isBookmarked to be the opposite of what it is
               firebase
@@ -111,7 +133,8 @@ export default class MovieProfileController extends Controller {
                 .update({
                   isBookmarked: !userData.isBookmarked,
                 });
-                this.checkBookmark=!userData.isBookmarked;
+                this.notify.success(this.model.title + " was added to bookmarks.")
+
             }
           } else {
             //otherwise create movie data in database
@@ -127,15 +150,18 @@ export default class MovieProfileController extends Controller {
                 isFavorited: false,
                 isBookmarked: true,
               });
+
+              this.notify.success(this.model.title + " was added to Bookmarks.")
+
           }
 
-          window.location.reload(true);
         });
-        
-    } else {
-      console.log("User Not Signed in");
-      //TODO provide alert asking user to sign up
+
+        this.checkBookmark=!this.checkBookmark;
+
+    } else {      
       // No user is signed in.
+      this.notify.error("You must make an account to save bookmarks.");
     }
 
   }

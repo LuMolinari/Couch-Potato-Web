@@ -39,8 +39,8 @@ export default class MovieProfileRoute extends Route {
 
             console.log("Favorited: " + userData.isFavorited);
             console.log("Bookmarked: " + userData.isBookmarked);
-            controller.set("model.favorite", userData.isFavorited);
-            controller.set("model.bookmark", userData.isBookmarked);
+            controller.set("checkfavorite", userData.isFavorited);
+            controller.set("checkBookmark", userData.isBookmarked);
           } else {
             console.log("Movie Not in Database");
           }
