@@ -13,17 +13,18 @@
     <i class=" huge bars icon inline"></i>
   </button>
   <LinkTo @route="index" @query={{hash page=this.pg}}>
-      <img class="inline" height="75px" src="/assets/images/spuds.png" alt="Couch Potato" />
+    <img class="inline" height="75px" src="/assets/images/spuds.png" alt="Couch Potato" />
   </LinkTo>
-  
+
 
   <h1 class="inline">Couch Potato</h1>
   <div id="myDIV">
-    <div class="side-menu">
+    <div id="myDIV2" class="side-menu">
+      {{!-- {{on 'click' this.openAccount }}  --}}
+      <button type="button" class="border-less massive fluid ui inverted basic button" {{on 'click' this.openDiscover }} >Discover</button>
+      <button type="button" class="massive fluid ui inverted basic button border-less" {{on 'click' this.openBookmarks }}>Bookmarks</button>
+      <button type="button" class="massive fluid ui inverted basic button border-less" {{on 'click' this.openAccount }} >My Account</button>
 
-      <LinkTo @route="index"  @query={{hash page=this.pg}}>Discover</LinkTo>
-      <LinkTo @route="bookmarks">Bookmarks</LinkTo>
-      <LinkTo @route="sign-in">My Account</LinkTo>
     </div>
   </div>
   <div>
