@@ -14,7 +14,7 @@ export default class BookmarksRoute extends Route {
       //first check if movie has been saved before
       firebase
         .database()
-        .ref("users/" + user.uid )
+        .ref("users/" + user.uid + "/savedMovies" )
         .once("value", (snapshot) => {
           if (snapshot.exists()) {
             //snapshot is returning the json for this particular movie saved by user id and putting it in userData

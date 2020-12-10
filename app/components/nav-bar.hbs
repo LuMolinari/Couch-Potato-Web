@@ -2,10 +2,8 @@
   #myDIV {
     display: none;
   }
-
   .ui.icon.button {
     height: 5.4ex;
-
   }
 </style>
 <div class="nav-bar">
@@ -18,12 +16,11 @@
   
 
   <h1 class="inline">Couch Potato</h1>
-  <div id="myDIV">
+  <div id="myDIV" style="display:none;">
     <div class="side-menu">
-
-      <LinkTo @route="index"  @query={{hash page=this.pg}}>Discover</LinkTo>
-      <LinkTo @route="bookmarks">Bookmarks</LinkTo>
-      <LinkTo @route="sign-in">My Account</LinkTo>
+      <LinkTo @route="index"  @query={{hash page=this.pg}} onclick="myFunction()">Discover</LinkTo>
+      <LinkTo @route="bookmarks" onclick="myFunction()">Bookmarks</LinkTo>
+      <LinkTo @route="sign-in" onclick="myFunction()">My Account</LinkTo>
     </div>
   </div>
   <div>
@@ -32,13 +29,14 @@
       <Input @id="user-question" @type="text" @value={{this.searchQuery}} />
       {{!-- <Input type="text" id="myInput" placeholder="Search for movies...." title="Type in a movie" value={{this.searchQuery}}> --}}
 
-      <LinkTo @route="search" @query={{hash searchTerm=this.searchQuery}}>
+      <LinkTo @route="search" @query={{hash searchTerm=this.searchQuery}} onclick="myFunctionHide()">
         <button class="ui icon button" type="submit" id="myBtn">
           <i class="search icon"></i>
         </button>
       </LinkTo>
 
     </div>
+  </div>
   </div>
   <script>
     function myFunction() {
@@ -49,8 +47,12 @@
         x.style.display = "none";
       }
     }
-
+function myFunctionHide() {
+      var x = document.getElementById("myDIV");
+     
+        x.style.display = "none";
+      
+    }
 
   </script>
   {{yield}}
-</div>
