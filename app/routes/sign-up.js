@@ -39,7 +39,7 @@ export default Route.extend({
                 //create alert
                 this.notify.success("Account Created")
                 // send user to route necessary
-                this.transitionTo('index')
+                this.transitionTo('index', { queryParams: { page: 1 }});
                 // change account setting to contain a logout button instead of a signin/signup
             })
             .catch((error) => {

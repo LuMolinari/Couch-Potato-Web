@@ -12,13 +12,16 @@
   <button onclick="myFunction()" type="button" class=" barsicon">
     <i class=" huge bars icon inline"></i>
   </button>
-  <img class="inline" height="75px" src="/assets/images/spuds.png" alt="Couch Potato" />
+  <LinkTo @route="index" @query={{hash page=this.pg}}>
+      <img class="inline" height="75px" src="/assets/images/spuds.png" alt="Couch Potato" />
+  </LinkTo>
+  
 
   <h1 class="inline">Couch Potato</h1>
   <div id="myDIV">
     <div class="side-menu">
 
-      <LinkTo @route="index">Discover</LinkTo>
+      <LinkTo @route="index"  @query={{hash page=this.pg}}>Discover</LinkTo>
       <LinkTo @route="bookmarks">Bookmarks</LinkTo>
       <LinkTo @route="sign-in">My Account</LinkTo>
     </div>

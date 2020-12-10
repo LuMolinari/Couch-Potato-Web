@@ -35,7 +35,7 @@ export default Route.extend({
                 // send user to route necessary
                 // change account setting to contain a logout button instead of a signin/signup
                 this.notify.success("Sign In Successful");
-                this.transitionTo('index');
+                this.transitionTo('index', { queryParams: { page: 1 }});
             })
             .catch((error) => {
                 var errorCode = error.code;
