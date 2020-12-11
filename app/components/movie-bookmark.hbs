@@ -1,18 +1,18 @@
 <div class="bookmark-container">
-    {{#if @poster}}
-    <img  class="movie-img" alt="Movie Poster for {{@title}}" ...attributes src="http://image.tmdb.org/t/p/w185{{@poster}}" width="75px"
-    height="150px">
+  {{#if @poster}}
+  <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes
+    src="http://image.tmdb.org/t/p/w185{{@poster}}">
   {{else}}
-    <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes src="/assets/images/NoPoster.png" width="75px"
+  <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes src="/assets/images/NoPoster.png" width="75px"
     height="150px">
   {{/if}}
-    <div class="movie-info">
-        <h3>{{@title}}</h3>
-        <p>{{@release}}</p>
-        <p>{{@year}}</p>
-    </div>
-    <div class="icon-container">
-        <i class="large blue bookmark  outline icon"></i>
-        <p><i class="large red heart outline icon"></i></p>
-    </div>
+  <div class="movie-info">
+    <h3>{{@title}}</h3>
+    <p>{{@release}}</p>
+    <p>{{@year}}</p>
+  </div>
+  <div class="icon-container">
+    <i class="large blue bookmark  outline icon"></i>
+    <p><i class="large red heart outline icon"></i></p>
+  </div>
 </div>
