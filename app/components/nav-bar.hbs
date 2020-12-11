@@ -18,12 +18,12 @@
 
 
   <h1 class="inline">Couch Potato</h1>
-  <div id="myDIV">
+  <div id="myDIV" style="display:none;">
     <div id="myDIV2" class="side-menu">
       {{!-- {{on 'click' this.openAccount }}  --}}
-      <button type="button" class="border-less massive fluid ui inverted basic button" {{on 'click' this.openDiscover }} >Discover</button>
-      <button type="button" class="massive fluid ui inverted basic button border-less" {{on 'click' this.openBookmarks }}>Bookmarks</button>
-      <button type="button" class="massive fluid ui inverted basic button border-less" {{on 'click' this.openAccount }} >My Account</button>
+      <button type="button" onclick="myFunction()" class="border-less massive fluid ui inverted basic button" {{on 'click' this.openDiscover }} >Discover</button>
+      <button type="button" onclick="myFunction()" class="massive fluid ui inverted basic button border-less" {{on 'click' this.openBookmarks }}>Bookmarks</button>
+      <button type="button" onclick="myFunction()" class="massive fluid ui inverted basic button border-less" {{on 'click' this.openAccount }} >My Account</button>
 
     </div>
   </div>
@@ -34,7 +34,7 @@
       {{!-- <Input type="text" id="myInput" placeholder="Search for movies...." title="Type in a movie" value={{this.searchQuery}}> --}}
 
       <LinkTo @route="search" @query={{hash searchTerm=this.searchQuery}}>
-        <button class="ui icon button" type="submit" id="myBtn">
+        <button class="ui icon button" onclick="myFunctionHide()" type="submit" id="myBtn">
           <i class="search icon"></i>
         </button>
       </LinkTo>
@@ -49,6 +49,11 @@
       } else {
         x.style.display = "none";
       }
+    }
+    function myFunctionHide() {
+      var x = document.getElementById("myDIV");
+        x.style.display = "none";
+      
     }
 
 
