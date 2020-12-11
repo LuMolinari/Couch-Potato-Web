@@ -25,6 +25,8 @@ export default class MovieProfileRoute extends Route {
     //get the current userid from the firebase session.
     var user = firebase.auth().currentUser;
 
+    controller.set("checkfavorite", false);
+    controller.set("checkBookmark", false);
     //check if user is logged in
     if (user) {
       //first check if movie has been saved before
@@ -45,7 +47,7 @@ export default class MovieProfileRoute extends Route {
             console.log("Movie Not in Database");
           }
         });
-    } 
+    }
 
     controller.set("model", model);
   }
