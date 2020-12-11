@@ -3,20 +3,15 @@
 </header>
 <main class="bookmark-frame">
 
+    {{!-- <h1>Bookmark1: {{@model.title}}</h1> --}}
     <div class="ui four column grid">
-    
-        {{#each @model as |movie|}}
-           
-   <h1>{{movie.title}}</h1>
- 
-        {{!-- <LinkTo @route="movie-profile" @model={{movie.movieID}}> --}}
-            {{!-- <div class="column"> --}}
-                {{!-- <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} /> --}}
-            {{!-- </div> --}}
-        {{!-- </LinkTo> --}}
-        {{/each}}
-
-
+        <div class="row">
+            {{#each @model as |movie|}}
+            <LinkTo @route="movie-profile" @model={{movie.movieID}}>
+                <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} />
+            </LinkTo>
+            {{/each}}
+        </div>
     </div>
 </main>
 
