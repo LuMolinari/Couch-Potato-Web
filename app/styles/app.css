@@ -232,8 +232,35 @@ h1 {
   font-size: 2em;
 }
 
-ui.button.border-less{
-  padding: 0;
-  border: none;
-  background: none;
+.borderless{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: #fefefe;  
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3em;
+    width: 250px;
+    margin-top: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.borderless:hover{
+  background-color: teal;
+  background-repeat:no-repeat;
+  border: #fefefe;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: #fefefe;  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 3em;
+  width: 250px;
 }
