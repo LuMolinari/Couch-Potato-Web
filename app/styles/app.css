@@ -199,6 +199,12 @@ h1 {
   width: 150px;
   height: 250px;
 }
+.heart.icon{
+  padding-left: 4px;
+}
+.bookmark.icon{
+  padding-left: 4px;
+}
 
 .overlay {
   background: rgb(0, 0, 0);
