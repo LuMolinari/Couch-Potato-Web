@@ -1,18 +1,44 @@
 <div class="bookmark-container">
   {{#if @poster}}
-  <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes
-    src="http://image.tmdb.org/t/p/w185{{@poster}}">
+  <LinkTo @route="movie-profile" @model={{@movieID}}>
+    <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes
+      src="http://image.tmdb.org/t/p/w185{{@poster}}">
+  </LinkTo>
   {{else}}
-  <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes src="/assets/images/NoPoster.png" width="75px"
-    height="150px">
+  <LinkTo @route="movie-profile" @model={{@movieID}}>
+    <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes src="/assets/images/NoPoster.png"
+      width="75px" height="150px">
+  </LinkTo>
   {{/if}}
-  <div class="movie-info">
-    <h3>{{@title}}</h3>
-    <p>{{@release}}</p>
-    <p>{{@year}}</p>
-  </div>
-  <div class="icon-container">
-    <i class="large blue bookmark  outline icon"></i>
-    <p><i class="large red heart outline icon"></i></p>
+  <div class="insideContainer">
+    <div class="movie-info">
+
+      <LinkTo @route="movie-profile" class="movie-info-link" @model={{@movieID}}>
+        <h3>{{@title}}</h3>
+        <p>{{@release}}</p>
+        <p>{{@year}}</p>
+      </LinkTo>
+    </div>
+    <div class="icon-container">
+      <div class="buttons">
+        <button class=" mini ui compact inverted white basic button" style="float:right;"
+          {{on 'click' this.saveFavorite1}} type="button">
+          {{#if this.favorite}}
+          <i class="heart icon"></i>
+          {{else}}
+          <i class="heart outline icon"></i>
+          {{/if}}
+
+        </button>
+        <button class="  mini ui  compact inverted white basic button" style="float:left;"
+          {{on 'click' this.saveBookmark}} type="button">
+          {{#if this.bookmark}}
+          <i class="bookmark icon"></i>
+          {{else}}
+          <i class="bookmark outline icon"></i>
+          {{/if}}
+        </button>
+      </div>
+    </div>
   </div>
 </div>

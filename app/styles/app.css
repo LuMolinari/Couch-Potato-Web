@@ -125,6 +125,7 @@ h1 {
   background-color: transparent;
   top: 175px;
   bottom: 0;
+ 
 }
 
 .bookmark-container {
@@ -132,7 +133,9 @@ h1 {
   display: inline-block;
   width: 350px;
   margin-top: 25px;
-  margin-left: 3.5em;
+  margin-left: 2em;
+ 
+ 
 }
 
 .movie-img {
@@ -142,19 +145,30 @@ h1 {
   float: left;
   object-fit: cover;
 }
-
+.insideContainer{
+  display: grid;
+  grid-template-columns: 18.5ex 13ex;
+  grid-gap:0ex;
+}
 .movie-info {
-  width: 50%;
   float: left;
   padding-left: 10px;
   padding-top: 10px;
   word-wrap: break-word;
   color: #fefefe;
 }
+.movie-info-link{
+  color: lightgray;
+}
+.movie-info-link:hover{
+  color: white;
+}
+
 
 .icon-container {
   padding-top: 10px;
   padding-right: 5px;
+  text-align: center;
   float: right;
   width: auto;
 }
@@ -198,7 +212,14 @@ h1 {
   transform: translate(1%, -110%);
   text-align: center;
 }
-
+.movieSearchTitle{
+  font-size: 20px;
+  max-inline-size:150px;
+  color: lightgray;
+}
+.movieSearchTitle:hover{
+  color: white;
+}
 .page-button-holder {
   grid-column: 1 / span 5;
   margin-bottom: 40px;

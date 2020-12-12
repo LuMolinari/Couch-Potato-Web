@@ -166,102 +166,17 @@
         <div id="FavoritesDIV">
             <main class="FavBox">
                 <div class="ui four column grid">
-                    <div class="four wide column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
-                    <div class="column">
-                        <MovieBookmark />
-                    </div>
+                    
+        <div class="row">
+            {{#each @model as |movie|}}
+            {{#if movie.isFavorited}}
+                <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} @movieID={{movie.movieID}}
+                @isFavorite ={{movie.isFavorited}}
+                @isBookmark={{movie.isBookmarked}}  />
+            {{/if}}
+            {{/each}}
+        </div>
+   
                 </div>
             </main>
         </div>

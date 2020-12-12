@@ -6,7 +6,7 @@
   {{#each @model as |movie|}}
   <LinkTo @route="movie-profile" @model={{movie.id}}>
     <DiscoverTile @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} />
-    <h2>{{movie.title}}</h2>
+     <h2 class = "movieSearchTitle">{{movie.title}}</h2>
   </LinkTo>
   {{/each}}
 

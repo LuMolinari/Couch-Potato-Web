@@ -145,7 +145,6 @@ export default class MovieProfileController extends Controller {
                 .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
                 .remove();
                 this.notify.success(this.model.title + " was removed from bookmarks.")
-
             }else if(userData.isFavorited === true &&
               userData.isBookmarked === true){
                 //if both are true then they are tying to remove the favorite
@@ -159,8 +158,6 @@ export default class MovieProfileController extends Controller {
                 });
 
                 this.notify.success(this.model.title + " was removed from bookmarks.")
-
-
             }  else {
               //if movie was saved then update isBookmarked to be the opposite of what it is
               firebase
