@@ -10,41 +10,33 @@ import "firebase/database";
 export default class MovieBookmarkComponent extends Component {
 
 
-
-
+    @tracked isBookmark = this.args.isBookmark;
+    @tracked isFavorite = this.args.isFavorite;
+    @tracked title = this.args.title;
+    @tracked movieID = this.args.movieID;
     // Notify works on this page for testing purposes
 
     @service() notify;
     //this.notify. info, success, warning, alert and error
-    @tracked checkBookmark = false;
-    @tracked checkfavorite = false;
-    //the model data passesd is available in the controller using this.model
-    //check the route to see how it's passed
+    
 
-    /**
-       * @param {boolean} t
-       */
-    //   set favorite1(t){
-    //     controller.set("model.isFavorited",t);
-    //     {{#if @isFavorite}}
-    //         {{favorite1 }}
-    //         {{/if}}
-    //   }
-    set favorite1( value){
-    this.checkfavorite=value;
-    }
-    get favorite() {
-        return this.checkfavorite;
+    get bookmark(){
+        return this.isBookmark;
     }
 
-    get bookmark() {
-        return this.checkBookmark;
+    get favorite(){
+        return this.isFavorite;
     }
+    
+    @action alert(){
+        console.log('b', this.isBookmark);
+        console.log('f', this.isFavorite);
+    }
+
+
 
     @action
-    saveFavoriteBookmark(modelID, modelTitle) {
-        console.log(" hiiiii" + this.checkBookmark);
-        console.log(this.checkfavorite);
+    saveFavorite() {
         //get the current userid from the firebase session.
         var user = firebase.auth().currentUser;
 
@@ -53,12 +45,12 @@ export default class MovieBookmarkComponent extends Component {
             //first check if movie has been saved before
             firebase
                 .database()
-                .ref("users/" + user.uid + "/savedMovies/" + modelID)
+                .ref("users/" + user.uid + "/savedMovies/" + this.movieID)
                 .once("value", (snapshot) => {
                     if (snapshot.exists()) {
                         //snapshot is returning the json for this particular movie saved by user id and putting it in userData
                         const userData = snapshot.val();
-                        console.log("exists!", userData.modelID);
+                        console.log("exists!", userdata);
 
                         //if favorite and bookmark are both false then we must delete this movie from savedMovies
                         if (
@@ -66,13 +58,13 @@ export default class MovieBookmarkComponent extends Component {
                         ) {
                             firebase
                                 .database()
-                                .ref("users/" + user.uid + "/savedMovies/" + modelID)
+                                .ref("users/" + user.uid + "/savedMovies/" + this.movieID)
                                 .update({
                                     isFavorited: !userData.isFavorited,
                                 });
 
-                            this.notify.success(modelTitle + " was removed from favorites.")
-                            controller.set("model.isFavorited", !userData.isFavorited);
+                            this.notify.success(this.title + " was removed from favorites.")
+                            this.isFavorite =  !this.isFavorite;
 
                         }
                         else if (
@@ -80,30 +72,28 @@ export default class MovieBookmarkComponent extends Component {
                         ) {
                             firebase
                                 .database()
-                                .ref("users/" + user.uid + "/savedMovies/" + modelID)
+                                .ref("users/" + user.uid + "/savedMovies/" + this.movieID)
                                 .remove();
-                            controller.set("model.isFavorited", userData.isFavorited);
 
-                            this.notify.success(modelTitle + " was removed from favorites.")
+                            this.notify.success(this.title + " was removed from favorites.")
                         }
                         else {
                             //if movie was saved then update isfavorite to be the opposite of what it is
                             firebase
                                 .database()
-                                .ref("users/" + user.uid + "/savedMovies/" + modelID)
+                                .ref("users/" + user.uid + "/savedMovies/" + this.movieID)
                                 .update({
                                     isFavorited: !userData.isFavorited,
                                 });
 
-                            this.notify.success(modelTitle + " was added to favorites.")
+                            this.notify.success(this.title + " was added to favorites.")
 
-                            controller.set("model.isFavorited", !userData.isFavorited);
                         }
                     } else {
                         //otherwise create movie data in database
                         firebase
                             .database()
-                            .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
+                            .ref("users/" + user.uid + "/savedMovies/" + this.movieID)
                             .set({
                                 title: this.model.title,
                                 movieID: this.model.id,
@@ -114,12 +104,12 @@ export default class MovieBookmarkComponent extends Component {
                                 isBookmarked: false,
                             });
 
-                        this.notify.success(modelTitle + " was added to favorites.")
+                        this.notify.success(this.title + " was added to favorites.")
                     }
 
                 });
 
-            this.checkfavorite = !this.checkfavorite;
+            this.isFavorite = !this.isFavorite;
 
 
         } else {
@@ -133,7 +123,9 @@ export default class MovieBookmarkComponent extends Component {
     }
 
     @action
-    saveBookmark2(modelID, modelTitle) {
+    saveBookmark() {
+        
+
         //get the current userid from the firebase session.
         var user = firebase.auth().currentUser;
 
@@ -142,7 +134,7 @@ export default class MovieBookmarkComponent extends Component {
             //first check if movie has been saved before
             firebase
                 .database()
-                .ref("users/" + user.uid + "/savedMovies/" + modelID)
+                .ref("users/" + user.uid + "/savedMovies/" + this.movieID)
                 .once("value", (snapshot) => {
                     if (snapshot.exists()) {
                         //snapshot is returning the json for this particular movie saved by user id and putting it in userData
@@ -156,12 +148,11 @@ export default class MovieBookmarkComponent extends Component {
                         ) {
                             firebase
                                 .database()
-                                .ref("users/" + user.uid + "/savedMovies/" + modelID)
+                                .ref("users/" + user.uid + "/savedMovies/" + this.movieID)
                                 .update({
                                     isBookmarked: !userData.isBookmarked,
                                 });
-                            this.notify.success(modelTitle + " was removed from bookmarks.")
-                            controller.set("model.isBookmarked", !userData.isBookmarked);
+                            this.notify.success(this.title + " was removed from bookmarks.");
                         }
                         else if (
                             userData.isFavorited === false &&
@@ -169,26 +160,24 @@ export default class MovieBookmarkComponent extends Component {
                         ) {
                             firebase
                                 .database()
-                                .ref("users/" + user.uid + "/savedMovies/" + modelID)
+                                .ref("users/" + user.uid + "/savedMovies/" + this.movieID)
                                 .remove();
-                            this.notify.success(modelTitle + " was removed from bookmarks.")
-                            controller.set("model.isBookmarked", userData.isBookmarked);
+                            this.notify.success(this.title + " was removed from bookmarks.")
                         } else {
                             //if movie was saved then update isBookmarked to be the opposite of what it is
                             firebase
                                 .database()
-                                .ref("users/" + user.uid + "/savedMovies/" + modelID)
+                                .ref("users/" + user.uid + "/savedMovies/" + this.movieID)
                                 .update({
                                     isBookmarked: !userData.isBookmarked,
                                 });
-                            this.notify.success(modelTitle + " was added to bookmarks.")
-                            controller.set("model.isBookmarked", !userData.isBookmarked);
+                            this.notify.success(this.title + " was added to bookmarks.")
                         }
                     } else {
                         //otherwise create movie data in database
                         firebase
                             .database()
-                            .ref("users/" + user.uid + "/savedMovies/" + modelID)
+                            .ref("users/" + user.uid + "/savedMovies/" + this.movieID)
                             .set({
                                 title: this.model.title,
                                 movieID: this.model.id,
@@ -199,13 +188,13 @@ export default class MovieBookmarkComponent extends Component {
                                 isBookmarked: true,
                             });
 
-                        this.notify.success(modelTitle + " was added to Bookmarks.")
+                        this.notify.success(this.title + " was added to Bookmarks.")
 
                     }
 
                 });
 
-            this.checkBookmark = !this.checkBookmark;
+            this.isBookmark = !this.isBookmark;
 
         } else {
             // No user is signed in.

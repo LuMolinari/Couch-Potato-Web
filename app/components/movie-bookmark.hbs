@@ -21,12 +21,8 @@
     </div>
     <div class="icon-container">
       <div class="buttons">
-           {{#if @isFavorite}}
-           {{this.favorite1 true}}
-           {{/if}}
-
-        <button class=" mini ui  compact inverted white basic button" style="float:right;"
-          {{on 'click' ( fn this.saveFavoriteBookmark @movieID @title)}} type="button">
+        <button class=" mini ui compact inverted white basic button" style="float:right;"
+          {{on 'click' this.saveFavorite}} type="button">
           {{#if this.favorite}}
           <i class="heart icon"></i>
           {{else}}
@@ -35,7 +31,7 @@
 
         </button>
         <button class="  mini ui  compact inverted white basic button" style="float:left;"
-          {{on 'click' ( fn this.saveBookmark2 @movieID @title)}} type="button">
+          {{on 'click' this.saveBookmark}} type="button">
           {{#if this.bookmark}}
           <i class="bookmark icon"></i>
           {{else}}
