@@ -64,33 +64,6 @@ export default class MyAccountRoute extends Route {
         
         return movieObjects;
     }
-    setupController(controller, model) {
-        //get the current userid from the firebase session.
-        var user = firebase.auth().currentUser;
-    
-        //check if user is logged in
-        if (user) {
-          //first check if movie has been saved before
-          firebase
-            .database()
-            .ref("users/" + user.uid + "/savedMovies/" + model.id)
-            .once("value", (snapshot) => {
-              if (snapshot.exists()) {
-                //snapshot is returning the json for this particular movie saved by user id and putting it in userData
-                const userData = snapshot.val();
-                console.log("exists!", userData);
-    
-                console.log("Favorited: " + userData.isFavorited);
-                console.log("Bookmarked: " + userData.isBookmarked);
-                controller.set("checkfavorite", userData.isFavorited);
-                controller.set("checkBookmark", userData.isBookmarked);
-              } else {
-                console.log("Movie Not in Database");
-              }
-            });
-        } 
-    
-        controller.set("model", model);
-      }
+   
 
 }

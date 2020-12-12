@@ -32,11 +32,11 @@ export default class MovieBookmarkComponent extends Component {
         console.log('b', this.isBookmark);
         console.log('f', this.isFavorite);
     }
-
+ 
 
 
     @action
-    saveFavorite() {
+    saveFavorite1() {
         //get the current userid from the firebase session.
         var user = firebase.auth().currentUser;
 
@@ -50,11 +50,12 @@ export default class MovieBookmarkComponent extends Component {
                     if (snapshot.exists()) {
                         //snapshot is returning the json for this particular movie saved by user id and putting it in userData
                         const userData = snapshot.val();
-                        console.log("exists!", userdata);
+                        console.log("exists!", userData);
 
                         //if favorite and bookmark are both false then we must delete this movie from savedMovies
                         if (
-                            userData.isFavorited === true && userData.isBookmarked === true
+                            userData.isFavorited === true &&
+                            userData.isBookmarked === true
                         ) {
                             firebase
                                 .database()
