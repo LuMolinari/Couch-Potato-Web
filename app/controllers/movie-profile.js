@@ -24,8 +24,6 @@ export default class MovieProfileController extends Controller {
 
   @action
   saveFavorite() {
-    console.log(this.checkBookmark);
-    console.log(this.checkfavorite);
     //get the current userid from the firebase session.
     var user = firebase.auth().currentUser;
 
@@ -36,33 +34,54 @@ export default class MovieProfileController extends Controller {
         .database()
         .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
         .once("value", (snapshot) => {
+          //check if movie has been saved before
           if (snapshot.exists()) {
             //snapshot is returning the json for this particular movie saved by user id and putting it in userData
             const userData = snapshot.val();
             console.log("exists!", userData);
 
             //if favorite and bookmark are both false then we must delete this movie from savedMovies
+            //in this case the clicked favorite when it was true so they would both be false
             if (
               userData.isFavorited === true &&
               userData.isBookmarked === false
             ) {
+              //delete movie
               firebase
                 .database()
                 .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
                 .remove();
                 this.notify.success(this.model.title + " was removed from favorites.")
 
+            } else if(userData.isFavorited === true &&
+              userData.isBookmarked === true){
+                //if both are true then they are tying to remove the favorite
+                firebase
+                .database()
+                .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
+                .update({
+
+
+                  isFavorited: !userData.isFavorited,
+                });
+
+                this.notify.success(this.model.title + " was removed from favorites.")
+
+
             } else {
-              //if movie was saved then update isfavorite to be the opposite of what it is
+              //otherwise they are tying to add a bookmark
               firebase
                 .database()
                 .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
                 .update({
+
+
                   isFavorited: !userData.isFavorited,
                 });
 
                 this.notify.success(this.model.title + " was added to favorites.")
 
+                
             }
           } else {
             //otherwise create movie data in database
@@ -109,6 +128,7 @@ export default class MovieProfileController extends Controller {
         .database()
         .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
         .once("value", (snapshot) => {
+          //check if movie has been saved before
           if (snapshot.exists()) {
             //snapshot is returning the json for this particular movie saved by user id and putting it in userData
             const userData = snapshot.val();
@@ -119,13 +139,29 @@ export default class MovieProfileController extends Controller {
               userData.isFavorited === false &&
               userData.isBookmarked === true
             ) {
+              //delete movie
               firebase
                 .database()
                 .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
                 .remove();
                 this.notify.success(this.model.title + " was removed from bookmarks.")
 
-            } else {
+            }else if(userData.isFavorited === true &&
+              userData.isBookmarked === true){
+                //if both are true then they are tying to remove the favorite
+                firebase
+                .database()
+                .ref("users/" + user.uid + "/savedMovies/" + this.model.id)
+                .update({
+
+
+                  isFavorited: !userData.isFavorited,
+                });
+
+                this.notify.success(this.model.title + " was removed from bookmarks.")
+
+
+            }  else {
               //if movie was saved then update isBookmarked to be the opposite of what it is
               firebase
                 .database()
