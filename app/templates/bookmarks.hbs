@@ -1,5 +1,5 @@
 <header class="bookmarks-header">
-    <h1>BookMarks</h1>
+    <h1>Bookmarks</h1>
 </header>
 <main class="bookmark-frame">
 
@@ -7,10 +7,11 @@
     <div class="ui four column grid">
         <div class="row">
             {{#each @model as |movie|}}
+            {{#if movie.isBookmarked}}
                 <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} @movieID={{movie.movieID}}
                 @isFavorite ={{movie.isFavorited}}
                 @isBookmarked={{movie.isBookmarked}}  />
-            
+            {{/if}}
             {{/each}}
         </div>
     </div>

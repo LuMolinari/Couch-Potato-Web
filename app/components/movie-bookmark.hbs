@@ -1,43 +1,48 @@
 <div class="bookmark-container">
   {{#if @poster}}
-   <LinkTo @route="movie-profile"  @model={{@movieID}}>
-  <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes
-    src="http://image.tmdb.org/t/p/w185{{@poster}}">
-    </LinkTo>
+  <LinkTo @route="movie-profile" @model={{@movieID}}>
+    <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes
+      src="http://image.tmdb.org/t/p/w185{{@poster}}">
+  </LinkTo>
   {{else}}
-   <LinkTo @route="movie-profile"  @model={{@movieID}}>
-  <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes src="/assets/images/NoPoster.png" width="75px"
-    height="150px">
-    </LinkTo>
+  <LinkTo @route="movie-profile" @model={{@movieID}}>
+    <img class="movie-img" alt="Movie Poster for {{@title}}" ...attributes src="/assets/images/NoPoster.png"
+      width="75px" height="150px">
+  </LinkTo>
   {{/if}}
-  <div class = "insideContainer">
-  <div class="movie-info">
-   
-    <LinkTo @route="movie-profile" class="movie-info-link" @model={{@movieID}}>
-    <h3>{{@title}}</h3>
-    <p>{{@release}}</p>
-    <p>{{@year}}</p>
-    </LinkTo>
-  </div>
-  <div class="icon-container">
-    <div class="buttons">
-      <button class=" mini ui  compact inverted white basic button" style="float:right;" {{on 'click' this.saveFavoriteBookmark}}
-        type="button">
-        {{#if @isFavorite}}
-        <i class="heart icon"></i>
-        {{else}}
-        <i class="heart outline icon"></i>
-        {{/if}}
-      </button>
-      <button class="  mini ui  compact inverted white basic button" style="float:left;" {{on 'click' this.saveBookmark2}}
-        type="button">
-        {{#if @isBookmarked}}
-        <i class="bookmark icon"></i>
-        {{else}}
-        <i class="bookmark outline icon"></i>
-        {{/if}} 
-      </button>
+  <div class="insideContainer">
+    <div class="movie-info">
+
+      <LinkTo @route="movie-profile" class="movie-info-link" @model={{@movieID}}>
+        <h3>{{@title}}</h3>
+        <p>{{@release}}</p>
+        <p>{{@year}}</p>
+      </LinkTo>
     </div>
-  </div>
+    <div class="icon-container">
+      <div class="buttons">
+           {{#if @isFavorite}}
+           {{this.favorite1 true}}
+           {{/if}}
+
+        <button class=" mini ui  compact inverted white basic button" style="float:right;"
+          {{on 'click' ( fn this.saveFavoriteBookmark @movieID @title)}} type="button">
+          {{#if this.favorite}}
+          <i class="heart icon"></i>
+          {{else}}
+          <i class="heart outline icon"></i>
+          {{/if}}
+
+        </button>
+        <button class="  mini ui  compact inverted white basic button" style="float:left;"
+          {{on 'click' ( fn this.saveBookmark2 @movieID @title)}} type="button">
+          {{#if this.bookmark}}
+          <i class="bookmark icon"></i>
+          {{else}}
+          <i class="bookmark outline icon"></i>
+          {{/if}}
+        </button>
+      </div>
+    </div>
   </div>
 </div>
