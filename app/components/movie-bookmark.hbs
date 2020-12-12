@@ -1,3 +1,4 @@
+{{#if this.checkIfItemRemoved}}
 <div class="bookmark-container">
   {{#if @poster}}
   <LinkTo @route="movie-profile" @model={{@movieID}}>
@@ -42,3 +43,4 @@
     </div>
   </div>
 </div>
+{{/if}}

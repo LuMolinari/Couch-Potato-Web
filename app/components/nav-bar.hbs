@@ -20,13 +20,11 @@
   <h1 class="inline">Couch Potato</h1>
   <div id="myDIV" style="display:none;">
     <div id="myDIV2" class="side-menu">
+
       {{!-- {{on 'click' this.openAccount }}  --}}
-      <button type="button" onclick="myFunction()" class="border-less massive fluid ui inverted basic button"
-        {{on 'click' this.openDiscover }}>Discover</button>
-      <button type="button" onclick="myFunction()" class="massive fluid ui inverted basic button border-less"
-        {{on 'click' this.openBookmarks }}>Bookmarks</button>
-      <button type="button" onclick="myFunction()" class="massive fluid ui inverted basic button border-less"
-        {{on 'click' this.openAccount }}>My Account</button>
+      <button type="button" onclick="myFunction()" class="borderless" {{on 'click' this.openDiscover }} >Discover</button>
+      <button type="button" onclick="myFunction()" class="borderless" {{on 'click' this.openBookmarks }}>Bookmarks</button>
+      <button type="button" onclick="myFunction()" class="borderless" {{on 'click' this.openAccount }} >My Account</button>
       {{!-- <h4 class="">Logged in as </h4> --}}
       {{#if session.isAuthenticated}}
       {{!-- <h3 style="margin-bottom: 0;">Logged in as,</h3> --}}
