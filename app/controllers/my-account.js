@@ -62,7 +62,7 @@ export default class MyAccountController extends Controller {
                                 });
 
                             this.notify.success(this.title + " was removed from favorites.")
-                            this.isFavorite =  !this.isFavorite;
+                           
 
                         }
                         else if (
@@ -107,7 +107,7 @@ export default class MyAccountController extends Controller {
 
                 });
 
-            this.isFavorite = !this.isFavorite;
+          
 
 
         } else {
