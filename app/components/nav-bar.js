@@ -9,19 +9,25 @@ export default class NavBarComponent extends Component {
   seachQuery = "";
   @service() router;
   @service() notify;
+  @service() session;
   self = this;
 
   @action
   openAccount() {
-    var user = firebase.auth().currentUser;
-
+    var user = firebase.auth().currentUser;    
     if (user) {
-      console.log("logged in");
+      console.log("nav:logged in");      
       this.router.transitionTo("my-account");
     } else {
       this.router.transitionTo("sign-in");
-      console.log("not logged in");
+      console.log("nav:not logged in");
     }
+  }
+
+  @action
+  signOut() {
+    console.log("logged out");
+    this.session.invalidate();
   }
 
   @action

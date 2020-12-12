@@ -17,7 +17,6 @@ export default Route.extend({
     
     actions: {
         logout() {
-            logout
             firebase.auth().signOut().then(function() {
                 // Sign-out successful.
             }).catch(function(error) {
@@ -32,9 +31,9 @@ export default Route.extend({
             firebase.auth().signInWithEmailAndPassword(email, password)
             .then((user) => {
                 console.log("user is signed in");
-                // send user to route necessary
                 // change account setting to contain a logout button instead of a signin/signup
                 this.notify.success("Sign In Successful");
+
                 this.transitionTo('index', { queryParams: { page: 1 }});
             })
             .catch((error) => {

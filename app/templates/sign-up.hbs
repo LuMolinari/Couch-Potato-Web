@@ -59,52 +59,55 @@
     margin-bottom: 15px;
   }
 </style>
-<main class="sign-up-frame">
-  <h1>Sign Up</h1>
-  <div class="sign-up">
+<div class="content-container">
 
-    <div class="caption">
-      <img height="150px" src="/assets/images/spuds.png" alt="Couch Potato" />
+  <main class="sign-up-frame">
+    <h1>Sign Up</h1>
+    <div class="sign-up">
 
-      <h1 class="picture-label">Couch Potato</h1>
+      <div class="caption">
+        <img height="150px" src="/assets/images/spuds.png" alt="Couch Potato" />
+
+        <h1 class="picture-label">Couch Potato</h1>
+      </div>
+
+
+      {{!-- change the inpute here to handlebar syntax --}}
+      <div class="ui input">
+        {{!-- <input value="" type="text" placeholder="First Name..."> --}}
+        {{input type="text" value=first placeholder="First Name"}}
+      </div>
+      <div class="ui input">
+        {{!-- <input type="text" placeholder="Last Name..."> --}}
+        {{input type="text" value=last placeholder="Last Name"}}
+      </div>
+      <div class="ui input">
+        {{!-- <input type="email" placeholder="Email..."> --}}
+        {{input type="text" value=email placeholder="Username"}}
+      </div>
+      <div class="ui input">
+        {{!-- <input type="password" placeholder="Password..."> --}}
+        {{input type="password" value=password placeholder="Password(At least 6 characters)"}}
+      </div>
+      {{!-- action "sign-up" first last email password --}}
+
+      <div class="sign-button">
+
+        {{!-- <button {{on 'click' this.signUp }} type="submit" class="ui teal button" id="sign-in-button"
+          onclick="location.href='http://localhost:4200/sign-in';"><b>Register</b></button> --}}
+        <button {{action "signUp" first last email password }} type="submit" class="ui teal button"
+          id="sign-in-button"><b>Register</b></button>
+
+      </div>
+      <div class="link">
+        <LinkTo @route="sign-in">
+          <p><u>Already have an account? Log in here.</u></p>
+        </LinkTo>
+
+      </div>
     </div>
+  </main>
 
 
-    {{!-- change the inpute here to handlebar syntax --}}
-    <div class="ui input">
-      {{!-- <input value="" type="text" placeholder="First Name..."> --}}
-      {{input type="text" value=first placeholder="First Name"}}
-    </div>
-    <div class="ui input">
-      {{!-- <input type="text" placeholder="Last Name..."> --}}
-      {{input type="text" value=last placeholder="Last Name"}}
-    </div>
-    <div class="ui input">
-      {{!-- <input type="email" placeholder="Email..."> --}}
-      {{input type="text" value=email placeholder="Username"}}
-    </div>
-    <div class="ui input">
-      {{!-- <input type="password" placeholder="Password..."> --}}
-      {{input type="password" value=password placeholder="Password(At least 6 characters)"}}
-    </div>
-    {{!-- action "sign-up" first last email password --}}
-
-    <div class="sign-button">
-
-      {{!-- <button {{on 'click' this.signUp }} type="submit" class="ui teal button" id="sign-in-button"
-        onclick="location.href='http://localhost:4200/sign-in';"><b>Register</b></button> --}}
-      <button {{action "signUp" first last email password }} type="submit" class="ui teal button"
-        id="sign-in-button"><b>Register</b></button>
-
-    </div>
-    <div class="link">
-      <LinkTo @route="sign-in">
-        <p><u>Already have an account? Log in here.</u></p>
-      </LinkTo>
-
-    </div>
-  </div>
-</main>
-
-
-{{outlet}}
+  {{outlet}}
+</div>

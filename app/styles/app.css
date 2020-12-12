@@ -60,7 +60,9 @@ h1 {
   width: 100%;
   height: 100px;
   padding: 25px 25px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 .nav-bar h1 {
@@ -125,7 +127,6 @@ h1 {
   background-color: transparent;
   top: 175px;
   bottom: 0;
- 
 }
 
 .bookmark-container {
@@ -133,9 +134,7 @@ h1 {
   display: inline-block;
   width: 350px;
   margin-top: 25px;
-  margin-left: 2em;
- 
- 
+  margin-left: 3.5em;
 }
 
 .movie-img {
@@ -145,30 +144,19 @@ h1 {
   float: left;
   object-fit: cover;
 }
-.insideContainer{
-  display: grid;
-  grid-template-columns: 18.5ex 13ex;
-  grid-gap:0ex;
-}
+
 .movie-info {
+  width: 50%;
   float: left;
   padding-left: 10px;
   padding-top: 10px;
   word-wrap: break-word;
   color: #fefefe;
 }
-.movie-info-link{
-  color: lightgray;
-}
-.movie-info-link:hover{
-  color: white;
-}
-
 
 .icon-container {
   padding-top: 10px;
   padding-right: 5px;
-  text-align: center;
   float: right;
   width: auto;
 }
@@ -212,14 +200,7 @@ h1 {
   transform: translate(1%, -110%);
   text-align: center;
 }
-.movieSearchTitle{
-  font-size: 20px;
-  max-inline-size:150px;
-  color: lightgray;
-}
-.movieSearchTitle:hover{
-  color: white;
-}
+
 .page-button-holder {
   grid-column: 1 / span 5;
   margin-bottom: 40px;
@@ -232,8 +213,13 @@ h1 {
   font-size: 2em;
 }
 
-ui.button.border-less{
+ui.button.border-less {
   padding: 0;
   border: none;
   background: none;
+}
+
+
+.content-container {
+  margin-top: 100px;
 }

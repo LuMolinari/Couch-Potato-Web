@@ -4,5 +4,11 @@
     <LinkTo @route="bookmarks">Bookmarks</LinkTo>
     <LinkTo @route="sign-in">My Account</LinkTo>
 
+
+    {{!-- {{#if this.session.isAuthenticated}}
+    <h1>logged in</h1>
+    {{else}}
+    <h1>not logged in</h1>
+    {{/if}} --}}
     {{yield}}
 </div>

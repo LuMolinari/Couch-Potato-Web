@@ -48,7 +48,6 @@ export default class MyAccountRoute extends Route {
                     }
                 });
         }
-        console.log("finalArr: ", JSON.stringify(finalArr, null, 2));
         const jsonString = JSON.stringify(finalArr);
         const jsonObjects = JSON.parse(jsonString);
         var movieObjects = [];
