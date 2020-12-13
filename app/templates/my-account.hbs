@@ -20,7 +20,7 @@
 
     #InfoBox {
         margin-top: 20px;
-        
+      
         max-height: 2000px;
         height: 500px;
         overflow-y: scroll;
@@ -239,77 +239,13 @@
         y.style.display = "none";
         if (z.style.display === "none") {
             z.style.display = "block";
-        } else {
-            z.style.display = "none";
-        }
+        } 
     }
     function favoritesFunction() {
         z.style.display = "none";
         if (y.style.display === "none") {
             y.style.display = "block";
-        } else {
-            y.style.display = "none";
-        }
-    }
-    function changeUserName() {
-        var userNameInput = document.getElementById("userNameBox");
-        var userNameText = document.getElementById("user-name");
-        var name1 = userNameInput.value;
-        if (userNameInput.style.display === "block") {
-
-            userNameText.innerHTML = name1;
-            userNameInput.style.display = "none";
-
-        } else {
-            userNameInput.style.display = "block";
-            userNameText.innerHTML = "";
-        }
-
-    }
-    function changeFirstName() {
-        var firstNameInput = document.getElementById("firstNameBox");
-        var firstNameText = document.getElementById("first-name");
-        var name1 = firstNameInput.value;
-        if (firstNameInput.style.display === "block") {
-
-            firstNameText.innerHTML = name1;
-            firstNameInput.style.display = "none";
-
-        } else {
-            firstNameInput.style.display = "block";
-            firstNameText.innerHTML = "";
-        }
-
-    }
-    function changeLastName() {
-        var lastNameInput = document.getElementById("lastNameBox");
-        var lastNameText = document.getElementById("last-name");
-        var name1 = lastNameInput.value;
-        if (lastNameInput.style.display === "block") {
-
-            lastNameText.innerHTML = name1;
-            lastNameInput.style.display = "none";
-
-        } else {
-            lastNameInput.style.display = "block";
-            lastNameText.innerHTML = "";
-        }
-
-    }
-    function changeEmail() {
-        var emailInput = document.getElementById("emailBox");
-        var emailText = document.getElementById("email-name");
-        var name1 = emailInput.value;
-        if (emailInput.style.display === "block") {
-
-            emailText.innerHTML = name1;
-            emailInput.style.display = "none";
-
-        } else {
-            emailInput.style.display = "block";
-            emailText.innerHTML = "";
-        }
-
+        } 
     }
 
 
