@@ -94,7 +94,7 @@
         {{#if @model.poster_path}}
         <img class="poster" src='http://image.tmdb.org/t/p/w300{{@model.poster_path}}' alt='{{@model.title}} Poster'>
         {{else}}
-        <img class="poster" src='/assets/images/NoPoster.png' alt='{{@model.title}} Poster'>
+        <img class="poster" src='/assets/images/NoPoster.png' style="width:300px" alt='{{@model.title}} Poster'>
         {{/if}}
     </div>
     <div class="j">
