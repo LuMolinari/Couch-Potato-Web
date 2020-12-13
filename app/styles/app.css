@@ -127,6 +127,32 @@ h1 {
   background-color: transparent;
   top: 175px;
   bottom: 0;
+  margin-left: 9%;
+ 
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+}
+
+.SettingsButton {
+ 
+  padding: 10px;
+  flex: 50%;
+  float:right;
+  margin-right: 30%;
+ 
+}
+
+.FavoritesButton {
+ 
+  padding: 10px;
+  flex: 50%;
+  float: left;
+  margin-left:30%;
 }
 
 .bookmark-container {
@@ -135,6 +161,7 @@ h1 {
   width: 350px;
   margin-top: 25px;
   margin-left: 3.5em;
+
 }
 
 .movie-img {
@@ -145,13 +172,24 @@ h1 {
   object-fit: cover;
 }
 
-.movie-info {
-  width: 50%;
+.movie-info-link {
+  width: 36%;
   float: left;
   padding-left: 10px;
   padding-top: 10px;
   word-wrap: break-word;
-  color: #fefefe;
+  color: lightgray;
+}
+.movie-info-link:hover {
+  color:white;
+}
+.movieSearchTitle{
+  color: lightgray;
+  font-size: 20px;
+  max-inline-size:150px;
+}
+.movieSearchTitle:hover{
+  color:white;
 }
 
 .icon-container {
