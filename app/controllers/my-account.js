@@ -165,7 +165,7 @@ export default class MyAccountController extends Controller {
                                 .update({
                                     isBookmarked: !userData.isBookmarked,
                                 });
-                            this.notify.success(this.title + " was added to bookmarks.")
+                            this.notify.success(this.title + " was added to bookmarks.");
                         }
                     } else {
                         //otherwise create movie data in database
@@ -198,49 +198,66 @@ export default class MyAccountController extends Controller {
     }
 
     @action
-    changePassword(oldPassword, newPassword) {
+    async changePassword(oldPassword, newPassword) {
+        
         var user = firebase.auth().currentUser;    
-        var credential = firebase.auth.EmailAuthProvider.credential(
+        var credential = await firebase.auth.EmailAuthProvider.credential(
             firebase.auth().currentUser.email,
             oldPassword
           );          
           // Prompt the user to re-provide their sign-in credentials          
-          user.reauthenticateWithCredential(credential).then(function() {
+          var isValid = await user.reauthenticateWithCredential(credential).then(function() {
             // User re-authenticated.
             console.log('reauthenticated');
             firebase.auth().currentUser.updatePassword(newPassword);
             console.log('changed password to ', newPassword);
             // notify user of password change success
             //this.notify.success("Password change successfull!");
+            return true;
           }).catch(function(error) {
             // An error happened.
+            
+            
             // notify user password old password did not match current password
-            console.log('old password is incorrect');
+            console.log('old password is incorrect' + error);
             //this.notify.error("Password change failed. Incorrect old password.");
-          });      
+            return false;
+          });           
+          if(isValid){
+            this.notify.info('Password change complete');  
+          } else {
+            this.notify.info('Password change incomplete');
+          }          
     }
 
     @action
-    changeEmail(email, password) {
+    async changeEmail(email, password) {
         var user = firebase.auth().currentUser;    
-        var credential = firebase.auth.EmailAuthProvider.credential(
+        var credential = await firebase.auth.EmailAuthProvider.credential(
             firebase.auth().currentUser.email,
             password
           );          
           // Prompt the user to re-provide their sign-in credentials          
-          user.reauthenticateWithCredential(credential).then(function() {
+          var isValid = await user.reauthenticateWithCredential(credential).then(function() {
             // User re-authenticated.
             console.log('reauthenticated');
             firebase.auth().currentUser.updateEmail(email);
             console.log('email changed to ', email);
             // notify user of password change success
             //this.notify.success("Email change successfull!");
+            return true;
           }).catch(function(error) {
             // An error happened.
             // notify user password old password did not match current password
-            console.log('email change failed');
+            console.log('email change failed' + error);
             //this.notify.error("Email change failed." + error);
-          });      
-    }
+            return false;
+          });    
 
+          if(isValid){
+            this.notify.info('Email change complete');  
+          } else {
+            this.notify.info('Email change incomplete');
+          }        
+    }
 }
