@@ -20,7 +20,7 @@
   <h1 class="inline">Couch Potato</h1>
   <div id="myDIV" style="display:none;">
     <div id="myDIV2" class="side-menu">
-      {{!-- {{on 'click' this.openAccount }}  --}}
+      {{!-- {{on 'click' this.openAccount }} --}}
       <button type="button" onclick="myFunction()" class="border-less massive fluid ui inverted basic button"
         {{on 'click' this.openDiscover }}>Discover</button>
       <button type="button" onclick="myFunction()" class="massive fluid ui inverted basic button border-less"
@@ -33,14 +33,13 @@
       {{!-- <h4 style="text-align: right; margin-top: 0;">{{session.data.user.email}}</h4> --}}
       {{!-- <button class="fluid ui inverted basic button border-less" {{on 'click' this.signOut}} type="button"> Sign
         Out</button> --}}
-      <div class="sign-button" style="margin: 50px 75px;">
-        <button class="ui teal button" {{on 'click' this.signOut}} {{on 'click' this.openDiscover}} type="submit">Sign
-          Out</button>
-      </div>
+      <button class="ui teal button" style="margin: 50px 75px; width: 100px;" {{on 'click' this.signOut}} {{on 'click'
+        this.openDiscover}} type="submit">Sign
+        Out</button>
       {{else}}
-      <div class="sign-button" style="margin: 50px 80px;">
-        <button class="ui teal button" {{on 'click' this.openAccount}} type="submit">Sign In</button>
-      </div>
+      <button class="ui teal button" style="margin: 50px 75px; width: 100px;" {{on 'click' this.openAccount}}
+        type="submit">Sign
+        In</button>
       {{/if}}
     </div>
   </div>
@@ -48,7 +47,8 @@
 
     <div class="ui action input" id="box">
       <Input @id="user-question" @type="text" @value={{this.searchQuery}} />
-      {{!-- <Input type="text" id="myInput" placeholder="Search for movies...." title="Type in a movie" value={{this.searchQuery}}> --}}
+      {{!-- <Input type="text" id="myInput" placeholder="Search for movies...." title="Type in a movie"
+        value={{this.searchQuery}}> --}}
 
       <LinkTo @route="search" @query={{hash searchTerm=this.searchQuery}}>
         <button class="ui icon button" onclick="myFunctionHide()" type="submit" id="myBtn">

@@ -106,10 +106,6 @@ export default class MyAccountController extends Controller {
                     }
 
                 });
-
-          
-
-
         } else {
             // Notify works on this page for testing purposes
 
@@ -201,6 +197,50 @@ export default class MyAccountController extends Controller {
 
     }
 
+    @action
+    changePassword(oldPassword, newPassword) {
+        var user = firebase.auth().currentUser;    
+        var credential = firebase.auth.EmailAuthProvider.credential(
+            firebase.auth().currentUser.email,
+            oldPassword
+          );          
+          // Prompt the user to re-provide their sign-in credentials          
+          user.reauthenticateWithCredential(credential).then(function() {
+            // User re-authenticated.
+            console.log('reauthenticated');
+            firebase.auth().currentUser.updatePassword(newPassword);
+            console.log('changed password to ', newPassword);
+            // notify user of password change success
+            //this.notify.success("Password change successfull!");
+          }).catch(function(error) {
+            // An error happened.
+            // notify user password old password did not match current password
+            console.log('old password is incorrect');
+            //this.notify.error("Password change failed. Incorrect old password.");
+          });      
+    }
 
+    @action
+    changeEmail(email, password) {
+        var user = firebase.auth().currentUser;    
+        var credential = firebase.auth.EmailAuthProvider.credential(
+            firebase.auth().currentUser.email,
+            password
+          );          
+          // Prompt the user to re-provide their sign-in credentials          
+          user.reauthenticateWithCredential(credential).then(function() {
+            // User re-authenticated.
+            console.log('reauthenticated');
+            firebase.auth().currentUser.updateEmail(email);
+            console.log('email changed to ', email);
+            // notify user of password change success
+            //this.notify.success("Email change successfull!");
+          }).catch(function(error) {
+            // An error happened.
+            // notify user password old password did not match current password
+            console.log('email change failed');
+            //this.notify.error("Email change failed." + error);
+          });      
+    }
 
 }
