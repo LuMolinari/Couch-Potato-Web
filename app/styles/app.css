@@ -123,16 +123,14 @@ h1 {
 
 /* Bookmarks */
 .bookmark-frame {
-  padding: 0 1.2em;
+  padding: 0 1.0em;
   background-color: transparent;
   top: 175px;
   bottom: 0;
-  margin-inline-start: 130px;
-  margin-inline-end: 130px;
 }
 
 .flex-container {
-  display:flex;
+  display: flex;
   flex-direction: row;
   font-size: 30px;
   text-align: center;
@@ -140,20 +138,15 @@ h1 {
 }
 
 .SettingsButton {
- 
   padding: 10px;
-  float:right;
-  margin-inline-start:800px ;
-  position: fixed;
- 
+  float: right;
+  margin-right: 3em;
 }
 
 .FavoritesButton {
   padding: 10px;
   float: left;
-  margin-inline-start: 500px;
-  position: fixed;
-
+  margin-left: 3em;
 }
 
 .bookmark-container {
@@ -181,16 +174,19 @@ h1 {
   word-wrap: break-word;
   color: lightgray;
 }
+
 .movie-info-link:hover {
-  color:white;
+  color: white;
 }
-.movieSearchTitle{
+
+.movieSearchTitle {
   color: lightgray;
   font-size: 20px;
-  max-inline-size:150px;
+  max-inline-size: 150px;
 }
-.movieSearchTitle:hover{
-  color:white;
+
+.movieSearchTitle:hover {
+  color: white;
 }
 
 .icon-container {
@@ -226,10 +222,12 @@ h1 {
   width: 150px;
   height: 250px;
 }
-.heart.icon{
+
+.heart.icon {
   padding-left: 4px;
 }
-.bookmark.icon{
+
+.bookmark.icon {
   padding-left: 4px;
 }
 
@@ -265,32 +263,32 @@ h1 {
   border: none;
   background: none; */
 
-.borderless{
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    color: #fefefe;  
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 3em;
-    width: 250px;
-    margin-top: auto;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.borderless {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #fefefe;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 3em;
+  width: 250px;
+  margin-top: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.borderless:hover{
+.borderless:hover {
   background-color: teal;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   border: #fefefe;
-  cursor:pointer;
+  cursor: pointer;
   overflow: hidden;
-  outline:none;
-  color: #fefefe;  
+  outline: none;
+  color: #fefefe;
   text-align: center;
   text-decoration: none;
   display: inline-block;
