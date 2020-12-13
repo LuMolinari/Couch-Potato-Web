@@ -1,29 +1,32 @@
-<h1>Search results for '{{this.searchTerm}}':</h1>
-<div class="ui inverted divider"></div>
+<div class="content-container">
 
-<div class="movie-container">
+  <h1>Search results for '{{this.searchTerm}}':</h1>
+  <div class="ui inverted divider"></div>
 
-  {{#each @model as |movie|}}
-  <LinkTo @route="movie-profile" @model={{movie.id}}>
-    <DiscoverTile @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} />
-     <h2 class = "movieSearchTitle">{{movie.title}}</h2>
-  </LinkTo>
-  {{/each}}
+  <div class="movie-container">
 
-  <div class="page-button-holder">
-    <button {{on "click" this.pastPage}} class="ui teal left labeled icon button" type="submit">
-      <i class="left arrow icon"></i>
-      Previous
-    </button>
-    <p class="page-number"> {{this.page}} </p>
-    <button {{on "click" this.nextPage}} class="ui teal right labeled icon button" type="submit">
-      <i class="right arrow icon"></i>
-      Next
-    </button>
+    {{#each @model as |movie|}}
+    <LinkTo @route="movie-profile" @model={{movie.id}}>
+      <DiscoverTile @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}} />
+      <h2 class="movieSearchTitle">{{movie.title}}</h2>
+    </LinkTo>
+    {{/each}}
+
+    <div class="page-button-holder">
+      <button {{on "click" this.pastPage}} class="ui teal left labeled icon button" type="submit">
+        <i class="left arrow icon"></i>
+        Previous
+      </button>
+      <p class="page-number"> {{this.page}} </p>
+      <button {{on "click" this.nextPage}} class="ui teal right labeled icon button" type="submit">
+        <i class="right arrow icon"></i>
+        Next
+      </button>
+
+    </div>
 
   </div>
 
+
+  {{outlet}}
 </div>
-
-
-{{outlet}}

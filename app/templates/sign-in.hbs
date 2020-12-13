@@ -54,40 +54,42 @@
     text-align: center;
   }
 </style>
+<div class="content-container">
 
-<div class="container">
-  <h1>
-    Sign In
-  </h1>
-  <div class="frame">
-    <div>
-      <img height="150px" src="/assets/images/spuds.png" alt="Couch Potato" />
+  <div class="container">
+    <h1>
+      Sign In
+    </h1>
+    <div class="frame">
+      <div>
+        <img height="150px" src="/assets/images/spuds.png" alt="Couch Potato" />
+      </div>
+    </div>
+    <div class="picture-label">Couch Potato</div>
+
+    <h2>Username</h2>
+    <div class="ui input">
+
+      {{input type="text" value=email placeholder="Username"}}
+      {{!-- <input type="text" placeholder="Username..."> --}}
+    </div>
+    <h2>Password</h2>
+    <div class="ui input">
+      {{input type="password" value=password placeholder="Password"}}
+      {{!-- <input type="password" placeholder="Password..." > --}}
+    </div>
+    <div class="sign-button">
+      <button class="ui teal button" type="submit" {{action "login" email password}}>Sign
+
+        In</button>
+    </div>
+    <div class=" signup-button">
+      <LinkTo @route="sign-up">
+        <p><u>Not registered yet? Sign up here</u></p>
+      </LinkTo>
+
     </div>
   </div>
-  <div class="picture-label">Couch Potato</div>
 
-  <h2>Username</h2>
-  <div class="ui input">
-
-    {{input type="text" value=email placeholder="Username"}}
-    {{!-- <input type="text" placeholder="Username..."> --}}
-  </div>
-  <h2>Password</h2>
-  <div class="ui input">
-    {{input type="password" value=password placeholder="Password"}}
-    {{!-- <input type="password" placeholder="Password..." > --}}
-  </div>
-  <div class="sign-button">
-    <button class="ui teal button" type="submit" {{action "login" email password}}>Sign
-
-      In</button>
-  </div>
-  <div class=" signup-button">
-    <LinkTo @route="sign-up">
-      <p><u>Not registered yet? Sign up here</u></p>
-    </LinkTo>
-
-  </div>
+  {{outlet}}
 </div>
-
-{{outlet}}

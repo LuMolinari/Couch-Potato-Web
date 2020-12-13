@@ -5,6 +5,7 @@
     }
 
     .grid-container {
+        margin-top: 100px;
         display: grid;
         grid-template-columns: 90ex 1fr;
         grid-gap: 10px;
@@ -75,12 +76,14 @@
         margin-left: 0ex;
         text-align: left;
     }
-     .btn-toolbar.pull-right{
+
+    .btn-toolbar.pull-right {
         display: grid;
         grid-template-columns: 15ex 15ex;
-        grid-gap:0ex;
+        grid-gap: 0ex;
 
-     }
+    }
+
     .buttons {
         margin-top: 3ex;
         margin-right: 0ex;
@@ -104,16 +107,18 @@
             </div>
             <div class='btn-toolbar pull-right'>
                 <div class="buttons">
-                    <button class=" mini ui inverted white basic button" style="float:right;" {{on 'click' this.saveFavorite}} type="button">
+                    <button class=" mini ui inverted white basic button" style="float:right;"
+                        {{on 'click' this.saveFavorite}} type="button">
                         {{#if this.favorite}}
                         <i class="heart icon"></i>
                         {{else}}
                         <i class="heart outline icon"></i>
                         {{/if}}
                     </button>
-                    <button class="mini ui inverted white basic button" style="float:left;" {{on 'click' this.saveBookmark}} type="button">
+                    <button class="mini ui inverted white basic button" style="float:left;"
+                        {{on 'click' this.saveBookmark}} type="button">
                         {{#if this.bookmark}}
-                        <i class="bookmark icon"></i> 
+                        <i class="bookmark icon"></i>
                         {{else}}
                         <i class="bookmark outline icon"></i>
                         {{/if}}

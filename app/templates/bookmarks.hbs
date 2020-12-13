@@ -1,23 +1,25 @@
-<header class="bookmarks-header">
-    <h1>Bookmarks</h1>
-</header>
-<main class="bookmark-frame">
+<div class="content-container">
+    <header class="bookmarks-header">
+        <h1>Bookmarks</h1>
+    </header>
+    <main class="bookmark-frame">
 
-    {{!-- <h1>Bookmark1: {{@model.title}}</h1> --}}
-    <div class="ui four column grid">
-        <div class="row">
-            {{#each @model as |movie|}}
-            {{#if movie.isBookmarked}}
-            <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}}
-                @movieID={{movie.movieID}} @isFavorite={{movie.isFavorited}} @isBookmark={{movie.isBookmarked}} />
-            {{/if}}
-            {{/each}}
+        {{!-- <h1>Bookmark1: {{@model.title}}</h1> --}}
+        <div class="ui four column grid">
+            <div class="row">
+                {{#each @model as |movie|}}
+                {{#if movie.isBookmarked}}
+                <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}} @year={{movie.release_date}}
+                    @movieID={{movie.movieID}} @isFavorite={{movie.isFavorited}} @isBookmark={{movie.isBookmarked}} />
+                {{/if}}
+                {{/each}}
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
-{{!-- {{#if @model.isBookmarked}} --}}
-{{!-- <h1>{{@model.title}}</h1> --}}
-{{!-- {{/if}} --}}
+    {{!-- {{#if @model.isBookmarked}} --}}
+    {{!-- <h1>{{@model.title}}</h1> --}}
+    {{!-- {{/if}} --}}
 
-{{outlet}}
+    {{outlet}}
+</div>
