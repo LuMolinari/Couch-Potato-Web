@@ -170,44 +170,28 @@
                 </main>
             </div>
             <div id="SettingsDIV">
-                <h2 class="settings-title">General Information</h2>
-                <div class="general-info">
-                    <div class="non-active-form">
-                        <p id="user-name">Jane1876 </p>
-                        <div class="ui input"> <input type="text" id="userNameBox" placeholder="Username" value="" />
-                        </div>
-                        {{!-- <a onclick="changeUserName()"><i class="fas fa-pen" style="float:right"></i> </a> --}}
-                        <br>
+                <h2 class="settings-title">Change Email</h2>
+                <form class="form my-form" style="text-align: center;">
+                    <div class="ui input" style="margin-bottom: 1.2em;">
+                        {{input type="email" value=email placeholder="New email"}}
                     </div>
-                    <div class="non-active-form">
-                        <p id="first-name">Jane </p>
-                        <div class="ui input"> <input type="text" id="firstNameBox" placeholder="First Name" value="" />
-                        </div>
-                        {{!-- <a onclick="changeFirstName()"><i class="fas fa-pen" style="float:right"></i> </a> --}}
-                        <br>
+                    <br>
+                    <div class="ui input" style="margin-bottom: 1.2em;">
+                        {{input type="password" value=password placeholder="Password"}}
                     </div>
 
-
-                    <div class="non-active-form">
-                        <p id="last-name">Doe </p>
-                        <div class="ui input"> <input type="text" id="lastNameBox" placeholder="Last Name" value="" />
-                        </div>
-                        {{!-- <a onclick="changeLastName()"><i class="fas fa-pen" style="float:right"></i> </a> --}}
-                        <br>
+                    <div class="form-submit right">
+                        <button class="ui teal button" type="submit" style="width: 150px;" {{action 'changeEmail' email
+                            password}}>Change
+                            Email</button>
                     </div>
-                    <div class="non-active-form">
-                        <p id="email-name">example@abc.com </p>
-                        <div class="ui input"> <input type="text" id="emailBox" placeholder="Email" value="" /></div>
-                        {{!-- <a onclick="changeEmail()"><i class="fas fa-pen" style="float:right"></i> </a> --}}
-                        <br>
-                    </div>
-                </div>
+                </form>
 
                 <div class="settings-section">
                     <h2 class="settings-title">Password</h2>
 
-                    <form class="form my-form">
-                        <div class="form-group">
+                    <form class="form my-form" style="text-align: center;">
+                        {{!-- <div class="form-group">
                             <div class="input-group">
                                 <input name="currentPassword" placeholder="Old Password" type="password"
                                     class="form-control" autocomplete="Old Password" value="">
@@ -217,12 +201,22 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <input name="password" placeholder="New Password" type="password" class="form-control"
-                                    autocomplete="New Password" value="">
+                                    autocomplete="New Password" value=newPassword>
                                 <span class="focus-input"></span>
                             </div>
+                        </div> --}}
+                        <div class="ui input" style="margin-bottom: 1.2em;">
+                            {{input type="password" value=oldPassword placeholder="Old Password"}}
                         </div>
+                        <br>
+                        <div class="ui input" style="margin-bottom: 1.2em;">
+                            {{input type="password" value=newPassword placeholder="New Password"}}
+                        </div>
+
                         <div class="form-submit right">
-                            <button class="ui teal button" type="submit">Change Password</button>
+                            <button class="ui teal button" type="submit" style="width: 150px;" {{action 'changePassword'
+                                oldPassword newPassword}}>Change
+                                Password</button>
                         </div>
                     </form>
 
