@@ -1,3 +1,4 @@
+{{#if this.checkIfItemRemoved}}
 <div class="bookmark-container">
   {{#if @poster}}
   <LinkTo @route="movie-profile" @model={{@movieID}}>
@@ -21,7 +22,7 @@
     </div>
     <div class="icon-container">
       <div class="buttons">
-        <button class=" mini ui compact inverted white basic button" style="float:right;"
+        <button class=" mini ui compact inverted white basic button" 
           {{on 'click' this.saveFavorite1}} type="button">
           {{#if this.favorite}}
           <i class="heart icon"></i>
@@ -30,15 +31,16 @@
           {{/if}}
 
         </button>
-        <button class="  mini ui  compact inverted white basic button" style="float:left;"
-          {{on 'click' this.saveBookmark}} type="button">
+        <button class=" mini ui compact inverted white basic button" 
+          {{on 'click' this.saveBookmark}} type="button" >
           {{#if this.bookmark}}
-          <i class="bookmark icon"></i>
+          <i class="bookmark icon" ></i>
           {{else}}
-          <i class="bookmark outline icon"></i>
+          <i class="bookmark outline icon" ></i>
           {{/if}}
         </button>
       </div>
     </div>
   </div>
 </div>
+{{/if}}

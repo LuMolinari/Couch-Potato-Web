@@ -8,7 +8,7 @@ import firebase from "firebase/app";
 import "firebase/database";
 
 export default class MovieBookmarkComponent extends Component {
-
+    @service() router;
 
     @tracked isBookmark = this.args.isBookmark;
     @tracked isFavorite = this.args.isFavorite;
@@ -32,7 +32,17 @@ export default class MovieBookmarkComponent extends Component {
         console.log('b', this.isBookmark);
         console.log('f', this.isFavorite);
     }
- 
+    
+    //this function checks if we need to remove the component from the view
+    get checkIfItemRemoved(){
+        if(this.router.currentRouteName == 'bookmarks' && this.isBookmark == false){
+            return false;
+        } else if(this.router.currentRouteName == 'my-account' && this.isFavorite == false){
+            return false;
+        }else{
+            return true;
+        }
+    }
 
 
     @action
@@ -110,7 +120,9 @@ export default class MovieBookmarkComponent extends Component {
 
                 });
 
-         
+        //changing this variable is what changes the button
+        this.isFavorite = !this.isFavorite;
+
 
 
         } else {

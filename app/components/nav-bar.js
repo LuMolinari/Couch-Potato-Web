@@ -37,6 +37,11 @@ export default class NavBarComponent extends Component {
 
   @action
   openBookmarks() {
-    this.router.transitionTo('bookmarks');
+    var user = firebase.auth().currentUser;    
+    if (user) {
+      this.router.transitionTo('bookmarks');
+    } else {
+      this.notify.error("You need to sign in to see bookmarks.");
+    }
   }
 }

@@ -10,20 +10,6 @@
     }
 
 
-    .FavoritesButton {
-        text-align: center;
-        float: left;
-        left: 38em;
-        display: inline-block;
-        position: absolute;
-    }
-
-    .SettingsButton {
-        float: right;
-        right: 35em;
-        display: inline-block;
-        position: absolute;
-    }
 
     .ui.teal.button {
         width: 20em;
@@ -150,6 +136,7 @@
 <div class="content-container">
     <div class="MyAccount">
         <h1>My Account</h1>
+        <div class="flex-container">
         <div class="buttons">
             <div class="FavoritesButton">
                 <button onclick="favoritesFunction()" class="ui teal button" type="button">
@@ -162,12 +149,14 @@
                 </button>
             </div>
         </div>
+        </div>
         <div id="InfoBox">
             <div id="FavoritesDIV">
-                <main class="FavBox">
-                    <div class="ui four column grid">
+                <main class="bookmark-frame">
 
-                        <div class="row">
+        {{!-- <h1>Bookmark1: {{@model.title}}</h1> --}}
+        <div class="ui four column grid">
+            <div class="row">
                             {{#each @model as |movie|}}
                             {{#if movie.isFavorited}}
                             <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}}
