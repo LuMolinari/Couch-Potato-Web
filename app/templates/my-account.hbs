@@ -1,14 +1,17 @@
 <style>
     .MyAccount {
         box-sizing: border-box;
+        text-align: center;
     }
 
     .buttons {
         padding-top: 1.5px;
-        height: 10px;
-        width: 100%;
+        height: auto;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        display: inline-block;
     }
-
 
 
     .ui.teal.button {
@@ -16,7 +19,7 @@
     }
 
     #InfoBox {
-        margin-top: 50px;
+        margin-top: 20px;
         margin-left: 15px;
         max-height: 2000px;
         height: 500px;
@@ -136,7 +139,6 @@
 <div class="content-container">
     <div class="MyAccount">
         <h1>My Account</h1>
-        <div class="flex-container">
         <div class="buttons">
             <div class="FavoritesButton">
                 <button onclick="favoritesFunction()" class="ui teal button" type="button">
@@ -149,14 +151,13 @@
                 </button>
             </div>
         </div>
-        </div>
         <div id="InfoBox">
             <div id="FavoritesDIV">
                 <main class="bookmark-frame">
 
-        {{!-- <h1>Bookmark1: {{@model.title}}</h1> --}}
-        <div class="ui four column grid">
-            <div class="row">
+                    {{!-- <h1>Bookmark1: {{@model.title}}</h1> --}}
+                    <div class="ui four column grid">
+                        <div class="row">
                             {{#each @model as |movie|}}
                             {{#if movie.isFavorited}}
                             <MovieBookmark @title={{movie.title}} @poster={{movie.poster_path}}
