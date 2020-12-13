@@ -123,11 +123,22 @@ h1 {
 
 /* Bookmarks */
 .bookmark-frame {
-  padding: 0 1.0em;
-  background-color: transparent;
-  top: 175px;
-  bottom: 0;
+  display: grid;
+  grid-template-columns: auto auto auto ;
+  grid-gap: 20px 10px;
+ 
 }
+
+
+.bookmark-container {
+  background-color: #36535c;
+  display: inline-block;
+  height: 195px;
+  width: 375px;
+  margin-left: 3.5em;
+
+}
+
 
 .flex-container {
   display: flex;
@@ -147,15 +158,6 @@ h1 {
   padding: 10px;
   float: left;
   margin-left: 3em;
-}
-
-.bookmark-container {
-  background-color: #36535c;
-  display: inline-block;
-  width: 350px;
-  margin-top: 25px;
-  margin-left: 3.5em;
-
 }
 
 .movie-img {
