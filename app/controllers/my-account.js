@@ -6,6 +6,7 @@ import { inject as service } from "@ember/service";
 import firebase from "firebase/app";
 import "firebase/database";
 export default class MyAccountController extends Controller {
+
     
     @tracked isBookmark = this.args.isBookmark;
     @tracked isFavorite = this.args.isFavorite;
@@ -244,6 +245,7 @@ export default class MyAccountController extends Controller {
             firebase.auth().currentUser.updateEmail(email);
             console.log('email changed to ', email);
             // notify user of password change success
+
             //this.notify.success("Email change successfull!");
             return true;
           }).catch(function(error) {
@@ -253,6 +255,7 @@ export default class MyAccountController extends Controller {
             //this.notify.error("Email change failed." + error);
             return false;
           });    
+
 
           if(isValid){
             this.notify.info('Email change complete');  
