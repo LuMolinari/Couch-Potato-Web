@@ -132,27 +132,28 @@ h1 {
 }
 
 .flex-container {
-  display: flex;
+  display:flex;
   flex-direction: row;
   font-size: 30px;
   text-align: center;
+
 }
 
 .SettingsButton {
  
   padding: 10px;
-  flex: 50%;
   float:right;
-  margin-right: 30%;
+  margin-left:52%;
+  position: fixed;
  
 }
 
 .FavoritesButton {
- 
   padding: 10px;
-  flex: 50%;
   float: left;
-  margin-left:30%;
+  margin-left:28%;
+  position: fixed;
+
 }
 
 .bookmark-container {
