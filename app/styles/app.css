@@ -127,15 +127,18 @@ h1 {
   grid-template-columns: auto auto auto ;
   grid-gap: 20px 10px;
   margin-top: 40px;
+ 
 }
 
 
 .bookmark-container {
   background-color: #36535c;
   display: inline-block;
-  height: 195px;
+  min-height: 195px;
+  max-height: 350px;
   width: 375px;
   margin-left: 3.5em;
+  margin-bottom:40px;
   text-align: start;
 }
 
