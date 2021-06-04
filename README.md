@@ -1,57 +1,37 @@
-# couch-potato-web
+# Couch Potato
+![](public\assets\images\couch-potato-banner.PNG)
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## [Link to Website](https://couchpotatoweb-29176.web.app/)
+### Introduction
 
-## Prerequisites
+Couch potato is a website which allows users to get useful movie information such as release date, ratings, and synopsis. Users can also save favorites and bookmark movies for future. The Movie Database API (TMDB) is used to obtain necessary movie data. Technologies used in this project include NPM, Ember, Semantic UI, and Google Firebase. This was the final project for the introductory web development course at California State Univerity, Northridge.
 
-You will need the following things properly installed on your computer.
+### Project setup
+Install dependecies using npm
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+```
+npm install
+```
+Then simply serve to launch the development server
 
-## Installation
+```
+ember serve
+```
 
-* `git clone <repository-url>` this repository
-* `cd couch-potato-web`
-* `npm install`
+### Features
+* Search for movies by name.
+* Movie results include category, release date, average rating, and synopsis.
+* Registered users can save favorites and bookmark movies as well.
 
-## Running / Development
+### Screenshots
+_Discover_
+![](public/assets/images/discover.png)
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+_Movie Description_
+![](public/assets/images/movie-description.png)
 
-### Code Generators
+_Sign In_
+![](public/assets/images/sign-in.png)
 
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint:hbs`
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+_Bookmarks_
+![](public/assets/images/bookmarks.png)
