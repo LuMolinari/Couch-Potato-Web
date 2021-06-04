@@ -1,5 +1,5 @@
 # Couch Potato
-![](public\assets\images\couch-potato-banner.PNG)
+![](public/assets/images/couch-potato-banner.PNG)
 
 ## [Link to Website](https://couchpotatoweb-29176.web.app/)
 ### Introduction
