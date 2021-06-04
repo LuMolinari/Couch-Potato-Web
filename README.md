@@ -1,5 +1,5 @@
 # Couch Potato
-![](public/assets/images/couch-potato-banner.PNG)
+![](/public/assets/images/couch-potato-banner.PNG)
 
 ## [Link to Website](https://couchpotatoweb-29176.web.app/)
 ### Introduction
@@ -25,13 +25,13 @@ ember serve
 
 ### Screenshots
 _Discover_
-![](public/assets/images/discover.png)
+![](/public/assets/images/discover.PNG)
 
 _Movie Description_
-![](public/assets/images/movie-description.png)
+![](/public/assets/images/movie-description.PNG)
 
 _Sign In_
-![](public/assets/images/sign-in.png)
+![](/public/assets/images/sign-in.PNG)
 
 _Bookmarks_
-![](public/assets/images/bookmarks.png)
+![](/public/assets/images/bookmarks.PNG)
