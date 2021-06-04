@@ -19,15 +19,16 @@ ember serve
 ```
 
 ### Features
+* Home Page filled with trending films.
 * Search for movies by name.
 * Movie results include category, release date, average rating, and synopsis.
 * Registered users can save favorites and bookmark movies as well.
 
 ### Screenshots
-_Discover_
+_Search Results_
 ![](/public/assets/images/discover.PNG)
 
-_Movie Description_
+_Movie Profile_
 ![](/public/assets/images/movie-description.PNG)
 
 _Sign In_
