@@ -4,10 +4,10 @@
 ## [Link to Website](https://couchpotatoweb-29176.web.app/)
 ### Introduction
 
-Couch potato is a website which allows users to get useful movie information such as release date, ratings, and synopsis. Users can also save favorites and bookmark movies for future. The Movie Database API (TMDB) is used to obtain necessary movie data. Technologies used in this project include NPM, Ember, Semantic UI, and Google Firebase. This was the final project for the introductory web development course at California State Univerity, Northridge.
+Couch potato is a website which allows users to get useful movie information such as release date, ratings, and synopsis. Users can also save favorites and bookmark movies for future. The Movie Database API (TMDB) is used to obtain necessary movie data. Technologies used in this project include NPM, Ember, Semantic UI, and Google Firebase. This was the final project for the introductory web development course at California State University, Northridge.
 
 ### Project setup
-Install dependecies using npm
+Install dependencies using npm
 
 ```
 npm install
